@@ -1,0 +1,8 @@
+{
+    "label": "Edit style panel",
+    "position": 4,
+    "link": {
+        "type": "generated-index",
+        "description": "This is a custom description"
+    }
+}

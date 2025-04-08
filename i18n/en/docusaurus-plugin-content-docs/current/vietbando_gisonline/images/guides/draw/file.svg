@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="none" stroke-linecap="none" stroke-linejoin="none" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, 0, -3.552713678800501e-15)">
+    <g transform="scale(4,4)">
+      <path d="M48,52h-31c-2.209,0 -4,-1.791 -4,-4v-40c0,-2.209 1.791,-4 4,-4h21.311c1.06,0 2.077,0.421 2.827,1.17l9.689,9.68c0.751,0.751 1.173,1.769 1.173,2.83v30.32c0,2.209 -1.791,4 -4,4z" fill="#35d2f1" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"/>
+      <path d="M13,8v18c2.762,0 5,-2.238 5,-5v-11.348c0,-0.42 0.264,-0.795 0.66,-0.934c1.945,-0.685 3.34,-2.538 3.34,-4.718h-5c-2.209,0 -4,1.791 -4,4z" fill="#ffffff" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.3"/>
+      <path d="M52,48v-23c-2.762,0 -5,2.238 -5,5v16c0,0.552 -0.448,1 -1,1h-9c-2.762,0 -5,2.238 -5,5h16c2.209,0 4,-1.791 4,-4z" fill="#000000" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" opacity="0.15"/>
+      <path d="M16.5,9.5v7" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M50.827,14.851l-9.689,-9.68c-0.332,-0.332 -0.721,-0.587 -1.138,-0.782v7.611c0,2.209 1.791,4 4,4h7.616c-0.196,-0.421 -0.454,-0.815 -0.789,-1.149z" fill="#008aa9" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"/>
+      <path d="M25,24h15c1.105,0 2,-0.895 2,-2v0c0,-1.105 -0.895,-2 -2,-2h-15c-1.105,0 -2,0.895 -2,2v0c0,1.105 0.895,2 2,2z" fill="#008aa9" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"/>
+      <path d="M25,32h15c1.105,0 2,-0.895 2,-2v0c0,-1.105 -0.895,-2 -2,-2h-15c-1.105,0 -2,0.895 -2,2v0c0,1.105 0.895,2 2,2z" fill="#008aa9" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"/>
+      <path d="M25,40h15c1.105,0 2,-0.895 2,-2v0c0,-1.105 -0.895,-2 -2,-2h-15c-1.105,0 -2,0.895 -2,2v0c0,1.105 0.895,2 2,2z" fill="#008aa9" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter"/>
+    </g>
+  </g>
+</svg>

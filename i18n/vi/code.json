@@ -1,0 +1,59 @@
+{
+    "homepage.title": {
+        "message": "Tài liệu Vietbando"
+    },
+    "homepage.description": {
+        "message": "Khám phá các sản phẩm và giải pháp của Vietbando."
+    },
+    "homepage.welcome": {
+        "message": "Chào mừng đến với Tài liệu Vietbando"
+    },
+    "homepage.tagline": {
+        "message": "Tìm trợ giúp, hướng dẫn, tài liệu kỹ thuật và tìm hiểu thêm về cách phát triển doanh nghiệp của bạn với Sản phẩm Vietbando."
+    },
+    "common.viewDocs": {
+        "message": "Xem tài liệu"
+    },
+    "product.indoorNavigation.name": {
+        "message": "Định vị trong nhà Vietbando"
+    },
+    "product.indoorNavigation.description": {
+        "message": "Dễ dàng điều hướng không gian trong nhà."
+    },
+    "product.desktop.name": {
+        "message": "Vietbando Desktop"
+    },
+    "product.desktop.description": {
+        "message": "Công cụ desktop mạnh mẽ cho lập bản đồ và phân tích."
+    },
+    "product.gisonline.name": {
+        "message": "GISOnline"
+    },
+    "product.gisonline.description": {
+        "message": "Nền tảng GIS trực tuyến toàn diện."
+    },
+    "product.land.name": {
+        "message": "Vietbando Land"
+    },
+    "product.land.description": {
+        "message": "Công cụ hiệu quả cho quản lý và quy hoạch đất đai."
+    },
+    "product.mapServices.name": {
+        "message": "Dịch vụ Bản đồ Vietbando"
+    },
+    "product.mapServices.description": {
+        "message": "API tiên tiến cho tích hợp bản đồ liền mạch."
+    },
+    "product.ogcServices.name": {
+        "message": "Dịch vụ OGC Vietbando"
+    },
+    "product.ogcServices.description": {
+        "message": "Dịch vụ web chuẩn OGC."
+    },
+    "product.workflow.name": {
+        "message": "Quản lý quy trình Vietbando"
+    },
+    "product.workflow.description": {
+        "message": "Công cụ tối ưu hóa quản lý quy trình làm việc."
+    }
+}

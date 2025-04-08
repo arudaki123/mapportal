@@ -1,0 +1,403 @@
+openapi: 3.0.3
+info:
+  title: WEBHOOK
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://{{host}}
+paths:
+  /webhook/v1/service:
+    get:
+      tags:
+        - service
+      summary: get all
+      description: get all
+      operationId: getAll
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  example: >-
+                    MinIO is a high-performance object storage system released
+                    under the GNU Affero General Public License v3.0. It is API
+                    compatible with the Amazon S3 cloud storage service
+                name:
+                  type: string
+                  example: Minio
+                whsid:
+                  type: string
+                  example: whsid
+            examples:
+              get all:
+                value:
+                  description: >-
+                    MinIO is a high-performance object storage system released
+                    under the GNU Affero General Public License v3.0. It is API
+                    compatible with the Amazon S3 cloud storage service
+                  name: Minio
+                  whsid: whsid
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - service
+      summary: collecting service
+      description: collecting service
+      operationId: collectingService
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  example: >-
+                    This is a service which is used to register workflow and
+                    control instances
+                name:
+                  type: string
+                  example: Workflow service
+            examples:
+              collecting service:
+                value:
+                  description: >-
+                    This is a service which is used to register workflow and
+                    control instances
+                  name: Workflow service
+      responses:
+        '200':
+          description: ''
+  /webhook/v1/event:
+    get:
+      tags:
+        - event
+      summary: get all event
+      description: get all event
+      operationId: getAllEvent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  example: >-
+                    MinIO is a high-performance object storage system released
+                    under the GNU Affero General Public License v3.0. It is API
+                    compatible with the Amazon S3 cloud storage service
+                name:
+                  type: string
+                  example: Minio
+                whsid:
+                  type: string
+                  example: whsid
+            examples:
+              get all event:
+                value:
+                  description: >-
+                    MinIO is a high-performance object storage system released
+                    under the GNU Affero General Public License v3.0. It is API
+                    compatible with the Amazon S3 cloud storage service
+                  name: Minio
+                  whsid: whsid
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - event
+      summary: create Event
+      description: create Event
+      operationId: createEvent
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  example: get status instances
+                name:
+                  type: string
+                  example: GET_STATUS_INSTANCE
+                whsid:
+                  type: string
+                  example: 56bfd2df-bf19-485a-8df4-c0ce03a01ede
+            examples:
+              create Event:
+                value:
+                  description: get status instances
+                  name: GET_STATUS_INSTANCE
+                  whsid: 56bfd2df-bf19-485a-8df4-c0ce03a01ede
+      responses:
+        '200':
+          description: ''
+  /webhook/v1/registration:
+    get:
+      tags:
+        - registration
+      summary: get all
+      description: get all
+      operationId: getAll1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  example: >-
+                    MinIO is a high-performance object storage system released
+                    under the GNU Affero General Public License v3.0. It is API
+                    compatible with the Amazon S3 cloud storage service
+                name:
+                  type: string
+                  example: Minio
+                whsid:
+                  type: string
+                  example: whsid
+            examples:
+              get all:
+                value:
+                  description: >-
+                    MinIO is a high-performance object storage system released
+                    under the GNU Affero General Public License v3.0. It is API
+                    compatible with the Amazon S3 cloud storage service
+                  name: Minio
+                  whsid: whsid
+      responses:
+        '200':
+          description: ''
+    put:
+      tags:
+        - registration
+      summary: registration
+      description: registration
+      operationId: registration1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                endpoint:
+                  type: string
+                  example: http://10.222.3.84:18080/indoors/v1/webhook
+                headers:
+                  type: object
+                  properties:
+                    Connection:
+                      type: string
+                      example: keep-alive
+                    token:
+                      type: string
+                      example: >-
+                        eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImlkXCI6XCIwODY4MWJjOC1jODkwLTRkOGMtYTk1Mi1hNDlmNGJiYzUzZjBcIixcInJvbGVpZFwiOlwiNjA2MTI2NDMtY2I4Yy00ZmM2LWFjZDYtM2YzMDE5ZmFmNDUxXCIsXCJ1c2VyaWRcIjpcIjA4ODI4MGE0LWYxOTYtNDY0Zi04YjAwLTg2OTEzOWQxMzM5MlwifV0iLCJleHAiOjE3MzA2ODM5MDIuOTM4MzU4LCJpYXQiOjE3Mjc2ODM5MDIuOTM4MzU4LCJuYmYiOjE3Mjc2ODM5MDIuOTM4MzU4LCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QifQ.wWyNl4XOjTNUl1-TYgorGGsKfJh47pB4xPwDoZMeo9o
+                id:
+                  type: string
+                  example: 2c3be32a-be1f-4638-b31b-3b76ea032a23
+            examples:
+              registration:
+                value:
+                  endpoint: http://10.222.3.84:18080/indoors/v1/webhook
+                  headers:
+                    Connection: keep-alive
+                    token: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImlkXCI6XCIwODY4MWJjOC1jODkwLTRkOGMtYTk1Mi1hNDlmNGJiYzUzZjBcIixcInJvbGVpZFwiOlwiNjA2MTI2NDMtY2I4Yy00ZmM2LWFjZDYtM2YzMDE5ZmFmNDUxXCIsXCJ1c2VyaWRcIjpcIjA4ODI4MGE0LWYxOTYtNDY0Zi04YjAwLTg2OTEzOWQxMzM5MlwifV0iLCJleHAiOjE3MzA2ODM5MDIuOTM4MzU4LCJpYXQiOjE3Mjc2ODM5MDIuOTM4MzU4LCJuYmYiOjE3Mjc2ODM5MDIuOTM4MzU4LCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QifQ.wWyNl4XOjTNUl1-TYgorGGsKfJh47pB4xPwDoZMeo9o
+                  id: 2c3be32a-be1f-4638-b31b-3b76ea032a23
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - registration
+      summary: registration
+      description: registration
+      operationId: registration
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                authorization:
+                  type: string
+                  example: API Key
+                endpoint:
+                  type: string
+                  example: http://10.222.3.84:18089/indoors/v1/webhook
+                headers:
+                  type: object
+                  properties:
+                    Connection:
+                      type: string
+                      example: keep-alive
+                    token:
+                      type: string
+                      example: >-
+                        eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImlkXCI6XCIwODY4MWJjOC1jODkwLTRkOGMtYTk1Mi1hNDlmNGJiYzUzZjBcIixcInJvbGVpZFwiOlwiNjA2MTI2NDMtY2I4Yy00ZmM2LWFjZDYtM2YzMDE5ZmFmNDUxXCIsXCJ1c2VyaWRcIjpcIjA4ODI4MGE0LWYxOTYtNDY0Zi04YjAwLTg2OTEzOWQxMzM5MlwifV0iLCJleHAiOjE3MjQzNjY4NjcuMzQ5NjkxLCJpYXQiOjE3MjEzNjY4NjcuMzQ5NjkxLCJuYmYiOjE3MjEzNjY4NjcuMzQ5NjkxLCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QifQ.voybKMFsHSaiI_eC3VDwOQD5GFqIaX0Zuhk6m48xLkE
+                name:
+                  type: string
+                  example: indoorNavigationService
+                wheid:
+                  type: string
+                  example: 7d491f6a-7da6-4c89-a7f8-73525854a2cb
+            examples:
+              registration:
+                value:
+                  authorization: API Key
+                  endpoint: http://10.222.3.84:18089/indoors/v1/webhook
+                  headers:
+                    Connection: keep-alive
+                    token: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImlkXCI6XCIwODY4MWJjOC1jODkwLTRkOGMtYTk1Mi1hNDlmNGJiYzUzZjBcIixcInJvbGVpZFwiOlwiNjA2MTI2NDMtY2I4Yy00ZmM2LWFjZDYtM2YzMDE5ZmFmNDUxXCIsXCJ1c2VyaWRcIjpcIjA4ODI4MGE0LWYxOTYtNDY0Zi04YjAwLTg2OTEzOWQxMzM5MlwifV0iLCJleHAiOjE3MjQzNjY4NjcuMzQ5NjkxLCJpYXQiOjE3MjEzNjY4NjcuMzQ5NjkxLCJuYmYiOjE3MjEzNjY4NjcuMzQ5NjkxLCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QifQ.voybKMFsHSaiI_eC3VDwOQD5GFqIaX0Zuhk6m48xLkE
+                  name: indoorNavigationService
+                  wheid: 7d491f6a-7da6-4c89-a7f8-73525854a2cb
+      responses:
+        '200':
+          description: ''
+  /webhook/v1/notification:
+    get:
+      tags:
+        - notification
+      summary: header
+      description: header
+      operationId: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                description:
+                  type: string
+                  example: >-
+                    MinIO is a high-performance object storage system released
+                    under the GNU Affero General Public License v3.0. It is API
+                    compatible with the Amazon S3 cloud storage service
+                name:
+                  type: string
+                  example: Minio
+                whsid:
+                  type: string
+                  example: whsid
+            examples:
+              header:
+                value:
+                  description: >-
+                    MinIO is a high-performance object storage system released
+                    under the GNU Affero General Public License v3.0. It is API
+                    compatible with the Amazon S3 cloud storage service
+                  name: Minio
+                  whsid: whsid
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+        - notification
+      summary: notification
+      description: notification
+      operationId: notification
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                authorization:
+                  type: string
+                  example: API Key
+                endpoint:
+                  type: string
+                  example: http://10.225.0.240:18080/indoors/v1/webhook
+                headers:
+                  type: object
+                  properties:
+                    Connection:
+                      type: string
+                      example: keep-alive
+                    token:
+                      type: string
+                      example: >-
+                        eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImlkXCI6XCIwODY4MWJjOC1jODkwLTRkOGMtYTk1Mi1hNDlmNGJiYzUzZjBcIixcInJvbGVpZFwiOlwiNjA2MTI2NDMtY2I4Yy00ZmM2LWFjZDYtM2YzMDE5ZmFmNDUxXCIsXCJ1c2VyaWRcIjpcIjA4ODI4MGE0LWYxOTYtNDY0Zi04YjAwLTg2OTEzOWQxMzM5MlwifV0iLCJleHAiOjE3MTkyNjAyNDIuMDQ5NjY0LCJpYXQiOjE3MTg5NjAyNDIuMDQ5NjY0LCJuYmYiOjE3MTg5NjAyNDIuMDQ5NjY0LCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QifQ.FSTq5jm4c1AklLtWHb_i2J6JpA5buBOO_twgminr27I
+                name:
+                  type: string
+                  example: IndoorService
+                wheid:
+                  type: string
+                  example: wheid
+            examples:
+              notification:
+                value:
+                  authorization: API Key
+                  endpoint: http://10.225.0.240:18080/indoors/v1/webhook
+                  headers:
+                    Connection: keep-alive
+                    token: >-
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImlkXCI6XCIwODY4MWJjOC1jODkwLTRkOGMtYTk1Mi1hNDlmNGJiYzUzZjBcIixcInJvbGVpZFwiOlwiNjA2MTI2NDMtY2I4Yy00ZmM2LWFjZDYtM2YzMDE5ZmFmNDUxXCIsXCJ1c2VyaWRcIjpcIjA4ODI4MGE0LWYxOTYtNDY0Zi04YjAwLTg2OTEzOWQxMzM5MlwifV0iLCJleHAiOjE3MTkyNjAyNDIuMDQ5NjY0LCJpYXQiOjE3MTg5NjAyNDIuMDQ5NjY0LCJuYmYiOjE3MTg5NjAyNDIuMDQ5NjY0LCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QifQ.FSTq5jm4c1AklLtWHb_i2J6JpA5buBOO_twgminr27I
+                  name: IndoorService
+                  wheid: wheid
+      responses:
+        '200':
+          description: ''
+  /webhook/v1/notification/test:
+    post:
+      tags:
+        - notification
+      summary: smtp test
+      description: smtp test
+      operationId: smtpTest
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cc:
+                  type: array
+                  items:
+                    type: string
+                    example: phsang198@gmail.com
+                  example:
+                    - phsang198@gmail.com
+                    - ntlong281098@gmail.com
+                message:
+                  type: object
+                  properties:
+                    eventid:
+                      type: string
+                      example: eventid
+                    msg:
+                      type: string
+                      example: this is con gà gay ha ha ha
+                subject:
+                  type: string
+                  example: Test khac đi trời ơi là trời
+            examples:
+              smtp test:
+                value:
+                  cc:
+                    - phsang198@gmail.com
+                    - ntlong281098@gmail.com
+                  message:
+                    eventid: eventid
+                    msg: this is con gà gay ha ha ha
+                  subject: Test khac đi trời ơi là trời
+      responses:
+        '200':
+          description: ''
+tags:
+  - name: service
+  - name: event
+  - name: registration
+  - name: notification

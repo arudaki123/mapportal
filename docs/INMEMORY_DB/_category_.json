@@ -1,0 +1,8 @@
+{
+    "label": "VIETBANDO INMEMORY DB",
+    "position": 8,
+    "link": {
+        "type": "generated-index",
+        "description": "This is a custom description"
+    }
+}

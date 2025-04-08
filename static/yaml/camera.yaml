@@ -1,0 +1,348 @@
+openapi: 3.0.3
+info:
+  title: CAMERAMETA
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://{{host}}
+paths:
+  /indoors/v1/camerameta:
+    get:
+      tags:
+      - camerameta
+      summary: CAMERA META ( get theo id hoac boundingbox)
+      description: CAMERA META ( get theo id hoac boundingbox)
+      operationId: cameraMetaGetTheoIdHoacBoundingbox
+      parameters:
+        - name: minlat
+          in: query
+          schema:
+            type: string
+            example: '10.854957392324346'
+        - name: maxlon
+          in: query
+          schema:
+            type: string
+            example: '106.63075268268585'
+        - name: maxlat
+          in: query
+          schema:
+            type: string
+            example: '10.852818400932803'
+        - name: minlon
+          in: query
+          schema:
+            type: string
+            example: '106.62613391876221'
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: 93273e0f-94ce-4e3f-b791-1eff2275d64e
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    put:
+      tags:
+      - camerameta
+      summary: CAMERA META
+      description: CAMERA META
+      operationId: cameraMeta1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                datetime_taken:
+                  type: number
+                  example: 1587377955
+                gps_position:
+                  type: object
+                  properties:
+                    coordinates:
+                      type: array
+                      items:
+                        type: number
+                        example: 106.626218
+                      example:
+                        - 106.626218
+                        - 10.853084
+                    type:
+                      type: string
+                      example: Point
+                heading:
+                  type: number
+                  example: 0
+                id:
+                  type: string
+                  example: 93273e0f-94ce-4e3f-b791-1eff2275d64e
+                owner:
+                  type: string
+                  example: vbd_streetview
+                snap_position:
+                  type: object
+                  properties:
+                    coordinates:
+                      type: array
+                      items:
+                        type: number
+                        example: 106.626218
+                      example:
+                        - 106.626218
+                        - 10.853084
+                    type:
+                      type: string
+                      example: Point
+                street_name:
+                  type: string
+                  example: Đường Tô Ký 2
+                trip_guid:
+                  type: string
+                  example: ac30105e-7069-4cd7-a46c-105ae55f1b52
+                trip_ref:
+                  type: string
+                  example: 20200420_06_006_GV_GS023843
+                visible:
+                  type: string
+                  example: 'true'
+            examples:
+              CAMERA META:
+                value:
+                  datetime_taken: 1587377955
+                  gps_position:
+                    coordinates:
+                      - 106.626218
+                      - 10.853084
+                    type: Point
+                  heading: 0
+                  id: 93273e0f-94ce-4e3f-b791-1eff2275d64e
+                  owner: vbd_streetview
+                  snap_position:
+                    coordinates:
+                      - 106.626218
+                      - 10.853084
+                    type: Point
+                  street_name: Đường Tô Ký 2
+                  trip_guid: ac30105e-7069-4cd7-a46c-105ae55f1b52
+                  trip_ref: 20200420_06_006_GV_GS023843
+                  visible: 'true'
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+      - camerameta
+      summary: CAMERA META
+      description: CAMERA META
+      operationId: cameraMeta
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                datetime_taken:
+                  type: number
+                  example: 1587377955
+                gps_position:
+                  type: object
+                  properties:
+                    coordinates:
+                      type: array
+                      items:
+                        type: number
+                        example: 106.626218
+                      example:
+                        - 106.626218
+                        - 10.853084
+                    type:
+                      type: string
+                      example: Point
+                heading:
+                  type: number
+                  example: 0
+                owner:
+                  type: string
+                  example: vbd_streetview
+                snap_position:
+                  type: object
+                  properties:
+                    coordinates:
+                      type: array
+                      items:
+                        type: number
+                        example: 106.626218
+                      example:
+                        - 106.626218
+                        - 10.853084
+                    type:
+                      type: string
+                      example: Point
+                street_name:
+                  type: string
+                  example: Đường Tô Ký 3
+                trip_guid:
+                  type: string
+                  example: ac30105e-7069-4cd7-a46c-105ae55f1b66
+                trip_ref:
+                  type: string
+                  example: 20200420_06_006_GV_GS023843
+                visible:
+                  type: string
+                  example: 'true'
+            examples:
+              CAMERA META:
+                value:
+                  datetime_taken: 1587377955
+                  gps_position:
+                    coordinates:
+                      - 106.626218
+                      - 10.853084
+                    type: Point
+                  heading: 0
+                  owner: vbd_streetview
+                  snap_position:
+                    coordinates:
+                      - 106.626218
+                      - 10.853084
+                    type: Point
+                  street_name: Đường Tô Ký 3
+                  trip_guid: ac30105e-7069-4cd7-a46c-105ae55f1b66
+                  trip_ref: 20200420_06_006_GV_GS023843
+                  visible: 'true'
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    delete:
+      tags:
+      - camerameta
+      summary: CAMERA META( delete theo id hoặc trip_guid )
+      description: CAMERA META( delete theo id hoặc trip_guid )
+      operationId: cameraMetaDeleteTheoIdHoCTripGuid
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: 93273e0f-94ce-4e3f-b791-1eff2275d64e
+        - name: trip_guid
+          in: query
+          schema:
+            type: string
+            example: ac30105e-7069-4cd7-a46c-105ae55f1b66
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /indoors/v1/restream:
+    get:
+      tags:
+      - restream
+      summary: GET RESTREAM SERVER
+      description: GET RESTREAM SERVER
+      operationId: getRestreamServer
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    put:
+      tags:
+      - restream
+      summary: UPDATE RESTREAM
+      description: UPDATE RESTREAM
+      operationId: updateRestream
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                host:
+                  type: string
+                  example: 10.2.2.2:1800
+                id:
+                  type: string
+                  example: 3fe2b76d-1182-434e-9a9e-ac3ed19c29b9
+                name:
+                  type: string
+                  example: restream4
+                provider:
+                  type: string
+                  example: abcd
+            examples:
+              UPDATE RESTREAM:
+                value:
+                  host: 10.2.2.2:1800
+                  id: 3fe2b76d-1182-434e-9a9e-ac3ed19c29b9
+                  name: restream4
+                  provider: abcd
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+      - restream
+      summary: ADD RESTREAM
+      description: ADD RESTREAM
+      operationId: addRestream
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                host:
+                  type: string
+                  example: 10.2.2.2:1800
+                name:
+                  type: string
+                  example: restream3
+                provider:
+                  type: string
+                  example: abc
+            examples:
+              ADD RESTREAM:
+                value:
+                  host: 10.2.2.2:1800
+                  name: restream3
+                  provider: abc
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    delete:
+      tags:
+      - restream
+      summary: DELETE RESTREAM
+      description: DELETE RESTREAM
+      operationId: deleteRestream
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: 3fe2b76d-1182-434e-9a9e-ac3ed19c29b9
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: token
+      in: header
+tags: []

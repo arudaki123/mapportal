@@ -3,11 +3,10 @@
  * bundles Infima by default. Infima is a CSS framework designed to
  * work well for content-centric websites.
  */
-
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary: #E62311;
+  --ifm-color-primary-dark: #DF1B12;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
   --ifm-color-primary-light: #33925d;
@@ -15,16 +14,238 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-heroBanner_src-background: #f2f2f2;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
+[data-theme=dark] {
+  --ifm-color-primary: #E62311;
+  --ifm-color-primary-dark: #DF1B12;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-heroBanner_src-background: #0e0e0e;
 }
+
+.theme-code-block {
+  max-height: 400px; /* Set your desired max height */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+.code-block-error-line {
+  background-color: #ff000020;
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+  border-left: 3px solid #ff000080;
+}
+
+.layer_toolbar p {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+.layer_toolbar p img {
+  padding-right: 0.25rem;
+}
+
+.navbar .navbar__brand {
+  align-items: center;
+}
+.navbar .navbar__logo {
+  height: 44px;
+}
+.navbar .navbar__title {
+  font-size: 18px;
+}
+
+.container-card {
+  max-width: 1440px;
+  padding: 40px 0 80px 0;
+  margin: 0 auto;
+}
+.container-card h1 {
+  text-align: center;
+}
+.container-card h4 {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 64px;
+}
+
+.heroBanner_src-pages-index-module .container {
+  max-width: 1440px;
+}
+.heroBanner_src-pages-index-module .container .hero-card {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0;
+  display: flex;
+  position: relative;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap {
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-center {
+  max-width: 620px;
+  padding: 80px 16px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.03), 0 0 7.2px rgba(0, 0, 0, 0.02);
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-center .button {
+  border-radius: 100px;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-center .hero__title {
+  font-size: 48px;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-center .hero__subtitle {
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-logo {
+  background-color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 16px;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: none;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-logo .svg {
+  width: 48px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-left {
+  flex-flow: column;
+  flex: 1;
+  justify-content: center;
+  align-self: stretch;
+  align-items: flex-end;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-left .logos-fader {
+  z-index: 3;
+  pointer-events: none;
+  background-image: linear-gradient(90deg, var(--ifm-color-heroBanner_src-background), rgba(255, 255, 255, 0) 30%, rgba(254, 254, 254, 0) 70%, var(--ifm-color-heroBanner_src-background));
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-left .hero-marquee-line {
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  position: absolute;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-left .hero-marquee-line .hero-logo {
+  animation-name: floatRight;
+  animation-delay: -1.5s;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-left .hero-marquee-line.top {
+  transform: translate(0, -120%);
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-left .hero-marquee-line.top .hero-logo {
+  animation-name: floatRight;
+  animation-delay: -3s;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-left .hero-marquee-line.bottom {
+  margin-left: 0;
+  margin-right: 0;
+  transform: translate(0, 120%);
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-left .hero-marquee-line.bottom .hero-logo {
+  animation-name: floatRight;
+  animation-delay: 0s;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-right {
+  flex-flow: column;
+  flex: 1;
+  justify-content: center;
+  align-self: stretch;
+  align-items: flex-start;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-right .logos-fader {
+  z-index: 3;
+  pointer-events: none;
+  background-image: linear-gradient(90deg, var(--ifm-color-heroBanner_src-background), rgba(255, 255, 255, 0) 30%, rgba(254, 254, 254, 0) 70%, var(--ifm-color-heroBanner_src-background));
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-right .hero-marquee-line {
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  position: absolute;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-right .hero-marquee-line .hero-logo {
+  animation-name: floatLeft;
+  animation-delay: -1.5s;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-right .hero-marquee-line.top {
+  transform: translate(0, -120%);
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-right .hero-marquee-line.top .hero-logo {
+  animation-name: floatLeft;
+  animation-delay: -3s;
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-right .hero-marquee-line.bottom {
+  margin-left: 0;
+  margin-right: 0;
+  transform: translate(0, 120%);
+}
+.heroBanner_src-pages-index-module .container .hero-card .hero-wrap .hero-marquee-right .hero-marquee-line.bottom .hero-logo {
+  animation-name: floatLeft;
+  animation-delay: 0s;
+}
+@keyframes floatLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-600%);
+  }
+}
+@keyframes floatRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(600%);
+  }
+}/*# sourceMappingURL=custom.css.map */

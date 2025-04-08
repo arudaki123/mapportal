@@ -1,0 +1,8 @@
+{
+    "label": "Draw",
+    "position": 3,
+    "link": {
+        "type": "generated-index",
+        "description": "Map source draw and edit document "
+    }
+}

@@ -2,22 +2,65 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
-
+/* 
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
-}
+} */
 
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
   }
 }
-
+.theme-code-block
+{
+  background: red;
+  max-height:300px;
+}
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.heroBanner {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 1440px;
+    margin: 40px auto;
+    border-radius: 12px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    background-color: var(--ifm-color-heroBanner_src-background);
+    color: var(--ifm-color-text-primary);
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.heroBanner h1 {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.heroBanner p {
+  animation: slideIn 0.5s ease-out 0.5s forwards;
+  opacity: 0; /* Đảm bảo ẩn trước khi animation chạy */
 }

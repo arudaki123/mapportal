@@ -1,0 +1,2658 @@
+openapi: 3.0.0
+info:
+  title: "VBD Indoor Navigation API"
+  description: "This is IndoorNavigation server. For this sample, you can use the api key `special-key` to test the authorization filters."
+  version: "1.0.0"
+  
+  termsOfService: "http://IndoorNavigation.io/terms/"
+  contact:
+    email: "gr3@vietbando.vn"
+  license:
+    name: ""
+    url: "https://api.vietbando.com/"
+    
+servers:
+  - url: '{protocol}://{host}:{port}/indoors/v1'
+    description: Optional server description, e.g. Internal staging server for testing
+    variables:
+      protocol:
+        enum:
+          - http
+          - https
+        default: http  
+      host:
+        enum:
+          - 10.222.3.84
+          - indoorapps.vietbando.vn
+        default: 10.222.3.84  
+      port:
+        enum:
+          - "18080"
+          - "8083"
+        default: "18080"
+
+########################################################################## 
+paths:
+#-----------------------------------------------------------area
+  /indoors/v1/area:
+    get:
+      tags:
+      - area
+      summary: AREA
+      description: AREA
+      operationId: area
+      parameters:
+        - name: buildingid
+          in: query
+          schema:
+            type: string
+            example: b64b5478-1040-46ed-b421-e83596760d3c
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: 0fb49b0b-e2e4-4c57-8f6d-489a73889cac
+        - name: floorid
+          in: query
+          schema:
+            type: string
+            example: 0c57d027-d266-4344-b9b6-fc7c04729a49
+      responses:
+        '200':
+          description: ''
+    put:
+      tags:
+      - area
+      summary: AREA
+      description: AREA
+      operationId: area3
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bounding_box:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: number
+                      example: 106.66877566527457
+                    example:
+                      - 106.66877566527457
+                      - 10.810845700675742
+                  example:
+                    - - 106.66877566527457
+                      - 10.810845700675742
+                    - - 106.66884972115128
+                      - 10.810872873012372
+                    - - 106.66891003308864
+                      - 10.810715599882684
+                    - - 106.66883697216788
+                      - 10.810687029981407
+                id:
+                  type: string
+                  example: 0fb49b0b-e2e4-4c57-8f6d-489a73889cac
+                name:
+                  type: string
+                  example: F3T
+            examples:
+              AREA:
+                value:
+                  bounding_box:
+                    - - 106.66877566527457
+                      - 10.810845700675742
+                    - - 106.66884972115128
+                      - 10.810872873012372
+                    - - 106.66891003308864
+                      - 10.810715599882684
+                    - - 106.66883697216788
+                      - 10.810687029981407
+                  id: 0fb49b0b-e2e4-4c57-8f6d-489a73889cac
+                  name: F3T
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+      - area
+      summary: AREA
+      description: AREA
+      operationId: area2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bounding_box:
+                  type: array
+                  items:
+                    type: array
+                    items:
+                      type: number
+                      example: 106.66877566527457
+                    example:
+                      - 106.66877566527457
+                      - 10.810845700675742
+                  example:
+                    - - 106.66877566527457
+                      - 10.810845700675742
+                    - - 106.66884972115128
+                      - 10.810872873012372
+                    - - 106.66891003308864
+                      - 10.810715599882684
+                    - - 106.66883697216788
+                      - 10.810687029981407
+                floorid:
+                  type: string
+                  example: e0181d55-48e2-451c-a16b-1bd7a52e21de
+                name:
+                  type: string
+                  example: F1QT
+            examples:
+              AREA:
+                value:
+                  bounding_box:
+                    - - 106.66877566527457
+                      - 10.810845700675742
+                    - - 106.66884972115128
+                      - 10.810872873012372
+                    - - 106.66891003308864
+                      - 10.810715599882684
+                    - - 106.66883697216788
+                      - 10.810687029981407
+                  floorid: e0181d55-48e2-451c-a16b-1bd7a52e21de
+                  name: F1QT
+      responses:
+        '200':
+          description: ''
+    delete:
+      tags:
+      - area
+      summary: AREA
+      description: AREA
+      operationId: area1
+      parameters:
+        - name: buildingid
+          in: query
+          schema:
+            type: string
+            example: eeaca928-35d6-4711-ac49-c8b15d62d2b3
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: 6dbfab1e-3878-4f4c-93d0-efa89f30ca05
+      responses:
+        '200':
+          description: ''
+#-----------------------------------------------------------floor
+  /indoors/v1/floor:
+    get:
+      tags:
+      - floor
+      summary: FLOOR
+      description: FLOOR
+      operationId: floor
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: cd32b4d0-5d57-47c4-814e-9fed58400840
+        - name: buildingid
+          in: query
+          schema:
+            type: string
+            example: 4ec5df06-3838-420c-8a7b-959a5cf42206
+      responses:
+        '200':
+          description: ''
+    put:
+      tags:
+      - floor
+      summary: FLOOR
+      description: FLOOR
+      operationId: floor2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: ddbbbce0-047b-43b3-9c99-35d8304f6749
+                  level:
+                    type: number
+                    example: -1
+                  name:
+                    type: string
+                    example: B
+              example:
+                - id: ddbbbce0-047b-43b3-9c99-35d8304f6749
+                  level: -1
+                  name: B
+                - id: 9e8f3c81-fc92-4e93-a5b4-e232ab181322
+                  level: 0
+                  name: G
+                - id: 1b9fa6f6-6222-48ab-9932-a0d524740e9b
+                  level: 1
+                  name: '1'
+                - id: cd32b4d0-5d57-47c4-814e-9fed58400840
+                  level: 2
+                  name: '2'
+                - id: 283a6636-a8a1-417e-96cf-c6803badc7ce
+                  level: 3
+                  name: '3'
+                - id: d6df8692-8265-4866-8c67-28446c17c300
+                  level: 4
+                  name: '4'
+                - id: 68286dcc-eb73-4e9c-b874-3ef4ea849c52
+                  level: 5
+                  name: '5'
+                - id: cb16859c-281d-4fdc-8ae4-29b5a050d7ff
+                  level: 6
+                  name: '6'
+                - id: 0fde7e79-b344-4e6b-b0ed-8ee0558b3e7a
+                  level: 7.5
+                  name: '7.5'
+            examples:
+              FLOOR:
+                value:
+                  - id: ddbbbce0-047b-43b3-9c99-35d8304f6749
+                    level: -1
+                    name: B
+                  - id: 9e8f3c81-fc92-4e93-a5b4-e232ab181322
+                    level: 0
+                    name: G
+                  - id: 1b9fa6f6-6222-48ab-9932-a0d524740e9b
+                    level: 1
+                    name: '1'
+                  - id: cd32b4d0-5d57-47c4-814e-9fed58400840
+                    level: 2
+                    name: '2'
+                  - id: 283a6636-a8a1-417e-96cf-c6803badc7ce
+                    level: 3
+                    name: '3'
+                  - id: d6df8692-8265-4866-8c67-28446c17c300
+                    level: 4
+                    name: '4'
+                  - id: 68286dcc-eb73-4e9c-b874-3ef4ea849c52
+                    level: 5
+                    name: '5'
+                  - id: cb16859c-281d-4fdc-8ae4-29b5a050d7ff
+                    level: 6
+                    name: '6'
+                  - id: 0fde7e79-b344-4e6b-b0ed-8ee0558b3e7a
+                    level: 7.5
+                    name: '7.5'
+      responses:
+        '200':
+          description: ''
+    post:
+      tags:
+      - floor
+      summary: FLOOR
+      description: FLOOR
+      operationId: floor1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                buildingid:
+                  type: string
+                  example: 528d5baf-4a33-47fe-bdfc-442e3a5eddd6
+                floor:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      level:
+                        type: number
+                        example: 7
+                      name:
+                        type: string
+                        example: Tang7
+                  example:
+                    - level: 7
+                      name: Tang7
+            examples:
+              FLOOR:
+                value:
+                  buildingid: 528d5baf-4a33-47fe-bdfc-442e3a5eddd6
+                  floor:
+                    - level: 7
+                      name: Tang7
+      responses:
+        '200':
+          description: ''
+    delete:
+      tags:
+      - floor
+      summary: FLOOR ( xóa từng tầng hoặc cả tòa )
+      description: FLOOR ( xóa từng tầng hoặc cả tòa )
+      operationId: floorXATNgTNgHoCCTA
+      parameters:
+        - name: buildingid
+          in: query
+          schema:
+            type: string
+            example: eeaca928-35d6-4711-ac49-c8b15d62d2b3
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: c2f8831f-4559-493f-b893-e4e90807ce02
+      responses:
+        '200':
+          description: ''
+#-----------------------------------------------------------building
+  /buildings:
+    post:
+      tags:
+      - building
+      summary: ""
+      description: "add or edit file( layer, network, floor) of building or add building's footprint "
+      operationId: "INIT_UPDATE_BUILDING"
+      parameters:
+        - in: query
+          name: id 
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                key:  
+                  type: array
+                  description: type of file ( network, layer, floor); if id param is null, key must only have one element and key's value can be null
+                  items:
+                    type: string
+                    example: network
+                  minItems: 1
+                  maxItems: 3
+                file:
+                  type: array
+                  description: File ( network.pbf, layer.pbf, floor.geojson). File order and file size must map with key order and key size. If id param is null, file type must be geojson.
+                  items:
+                    type: string
+                    format: binary
+                  minItems: 1
+                  maxItems: 3
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    delete:
+      tags:
+      - building
+      summary: ""
+      description: "delete all attributes of building"
+      operationId: "DELETE_BUILDING"
+      parameters:
+        - in: query
+          name: id   
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+          
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /buildings/all:
+    get:
+      tags:
+      - building
+      summary: ""
+      description: "return guid, pois, beacons, categories of building"
+      operationId: "GET_ALL"
+      parameters:
+        - in: query
+          name: longitude   
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 106.721693
+          description: longitude of building
+        
+        - in: query
+          name: latitude
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 10.794767
+          description: latitude of building
+          
+        - in: query
+          name: offset 
+          schema:
+            type: integer
+            format: int
+            example: -25200
+          description: offset of timestamptz
+          
+      responses:
+        '200':
+          description: return all info of building 
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_all_building_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /buildings/building3d:
+    get:
+      tags:
+      - building
+      summary: ""
+      description: "return information building ( guid , name , created time of input limited rows)"
+      operationId: "GET_BUILDING3D"
+      parameters:
+        - in: query
+          name: limit_row   
+          required: true
+          schema:
+            type: integer
+            format: int
+          description: numbers of returning row
+        
+        - in: query
+          name: offset
+          schema:
+            type: integer
+            format: int
+          description: offset of timestampt showing format
+      responses:
+        '200':
+          description: A list of building 
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_building3d_building_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /buildings/id:
+    get:
+      tags:
+      - building
+      summary: ""
+      description: "return guid of building"
+      operationId: "GET_GUID"
+      parameters:
+        - in: query
+          name: longitude   
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 106.721693
+          description: longitude of building
+        
+        - in: query
+          name: latitude
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 10.794767
+          description: latitude of building
+      responses:
+        '200':
+          description: return guid of building 
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_id_building_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /buildings/centroid:
+    get:
+      tags:
+      - building
+      summary: ""
+      description: "return coordinate of building"
+      operationId: "GET_CENTROID"
+      parameters:
+        - in: query
+          name: id   
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        
+      responses:
+        '200':
+          description: return guid of building 
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_centroid_building_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /buildings/footprint:
+    get:
+      tags:
+      - building
+      summary: ""
+      description: "return list footprint in boundingbox"
+      operationId: "GET_FOOTPRINT"
+      parameters:
+        - in: query
+          name: minlon   
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 106.62613391876221
+          description: min longitude of boundingbox
+        - in: query
+          name: minlat   
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 10.854957392324346
+          description: min latitude of boundingbox
+        - in: query
+          name: maxlon   
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 106.63075268268585
+          description: max longitude of boundingbox
+        - in: query
+          name: maxlat   
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 10.852818400932803
+          description: max latitude in boundingbox
+        
+      responses:
+        '200':
+          description: return footprint of building 
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_footprint_building_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /buildings/floor:
+    get:
+      tags:
+      - building
+      summary: ""
+      description: "return buffer( floor ) of building"
+      operationId: "GET_FLOOR_FILE_BUILDING"
+      parameters:
+        - in: query
+          name: id   
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: query
+          name: extension   
+          schema:
+            type: string
+            example: pbf
+          description: returning type extension(pbf, geojson), if this param is invalid or null, default extension is geojson
+          
+      responses:
+        '200':
+          description: return buffer(floor) of building
+          content:
+            application/octetstream:
+              schema:
+                description: A geojson file (have Content-Disposition:attachment;filename="building.web.geojson" ) 
+                type: string
+                example: a json string( with geojson file) or a binary string ( with pbf file )
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    delete:
+      tags:
+      - building
+      summary: ""
+      description: "delete files floor of building"
+      operationId: "DELETE_FLOOR_FILE_BUILDING"
+      parameters:
+        - in: query
+          name: id   
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+          
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /buildings/building:
+    get:
+      tags:
+      - building
+      summary: ""
+      description: "return buffer( network , layer ) of building"
+      operationId: "GET_BUFFER_FILE_BUILDING"
+      parameters:
+        - in: query
+          name: id   
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+          
+      responses:
+        '200':
+          description: return buffer file of building
+          content:
+            application/octetstream:
+              schema:
+                description: A zip file ( include file network and file layer; have Content-Disposition:attachment;filename="guid.zip" ) 
+                type: string
+                format: binary
+                example: a binary string 
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    delete:
+      tags:
+      - building
+      summary: ""
+      description: "delete file buffer( layer & network ) of building"
+      operationId: "DELETE_BUFFER_FILE_BUILDING"
+      parameters:
+        - in: query
+          name: id   
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+          
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+#-----------------------------------------------------------editor  
+  /buildings/editor:
+    post:
+      tags:
+      - editor
+      summary: ""
+      description: "add or edit file( osm , json) in editor folder"
+      operationId: "ADD_EDITOR_FILE_BUILDING"
+      parameters:
+        - in: query
+          name: id 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: query
+          name: doctype   
+          schema:
+            type: string
+            example: project
+          description: type of file ( = project if returning json file ; = osm if returning osm file; not required if returning zip file( include all files in editor) )
+        
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                key:  
+                  type: array
+                  description: Key's value can be null. If doctype is not null, key must only have one element
+                  items:
+                    type: string
+                    example: empty
+                  minItems: 1
+                  maxItems: 2
+                file:
+                  type: array
+                  description: file ( osm , json).file size must map with key size.
+                  items:
+                    type: string
+                    format: binary
+                  minItems: 1
+                  maxItems: 2
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/no_data_response'
+                  - $ref: '#/components/schemas/error_response'
+    get:
+      tags:
+      - editor
+      summary: ""
+      description: "return one file or all files in editor folder of DB"
+      operationId: "GET_EDITOR_FILE_BUILDING"
+      parameters:
+        - in: query
+          name: id   
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: query
+          name: doctype   
+          schema:
+            type: string
+            example: project
+          description: type of file ( = project if returning json file ; = osm if returning osm file; not required if returning zip file( include all file in editor) )
+          
+      responses:
+        '200':
+          description: return editor files
+          content:
+            application/octetstream:
+              schema:
+                description: A zip file ( include osm file and json file; have Content-Disposition:attachment;filename="guid.zip" ), a osm file or a json file( both of them have filename format building.editor.{extension})
+                type: string
+                format: binary
+                example: a binary string 
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    delete:
+      tags:
+      - editor
+      summary: ""
+      description: "delete file buffer( layer & network ) of building"
+      operationId: "DELETE_EDITOR_FILE_BUILDING"
+      parameters:
+        - in: query
+          name: id   
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: query
+          name: doctype   
+          schema:
+            type: string
+            example: project
+          description: type of file ( = project if deleting json file ; = osm if deleting osm file; not required if deleting all files in editor )
+          
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+#-----------------------------------------------------------editor/floors 
+  /buildings/editor/floors:
+    post:
+      tags:
+      - editor/floors
+      summary: ""
+      description: "add or update file( jpg, png, bmp) in editor/floor"
+      operationId: "ADD_EDITOR_FLOORS_FILE_BUILDING"
+      parameters:
+        - in: query
+          name: id 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: query
+          name: level   
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 1.0
+          description: level in building
+        
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                key:  
+                  type: string
+                  description: Key's value can be null. 
+                  example: empty
+                file:
+                  type: string
+                  description: file image ( jpg, png, bmp)
+                  format: binary
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/no_data_response'
+                  - $ref: '#/components/schemas/error_response'
+    get:
+      tags:
+      - editor/floors
+      summary: ""
+      description: "return one file or all image files in editor/floor of DB"
+      operationId: "GET_EDITOR_FLOORS_FILE_BUILDING"
+      parameters:
+        - in: query
+          name: id 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: query
+          name: level   
+          schema:
+            type: number
+            format: double
+            example: 1.0
+          description: returning level
+        - in: query
+          name: extension   
+          schema:
+            type: string
+            example: jpg
+          description: returning type extension(jpg, png, bmp)
+          
+      responses:
+        '200':
+          description: return editor floor files
+          content:
+            application/octetstream:
+              schema:
+                description: A zip file ( include all image files in floors folder, or all image files of one level or all image files of one extension; have Content-Disposition:attachment;filename="guid.zip" ), a image file (have filename format floorplan_{level}.{extension})
+                type: string
+                format: binary
+                example: a binary string 
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    delete:
+      tags:
+      - editor/floors
+      summary: ""
+      description: "delete all image files in editor/floors"
+      operationId: "DELETE_EDITOR_FLOORS_FILE_BUILDING"
+      parameters:
+        - in: query
+          name: id 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: query
+          name: level   
+          schema:
+            type: number
+            format: double
+            example: 1.0
+          description: level of building
+          
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+#-----------------------------------------------------------poi
+  /pois/buildingpoi:
+    get:
+      tags:
+      - poi
+      summary: ""
+      description: "return list pois in building"
+      operationId: "GET_BUILDING_POI"
+      parameters:
+        - in: query
+          name: id 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+      responses:
+        '200':
+          description: A list of pois building
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_poi_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /pois/floorpoi:
+    get:
+      tags:
+      - poi
+      summary: ""
+      description: "return list pois of one floor in building"
+      operationId: "GET_FLOOR_POI"
+      parameters:
+        - in: query
+          name: id 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: query
+          name: floor 
+          required: true
+          schema:
+            type: number
+            format: double
+            example: 1
+          description: floor of building
+      responses:
+        '200':
+          description: A list pois of one floor in building
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_poi_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /pois/door:
+    get:
+      tags:
+      - poi
+      summary: ""
+      description: "return list doors in building"
+      operationId: "GET_BUILDING_DOOR"
+      parameters:
+        - in: query
+          name: id 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+      responses:
+        '200':
+          description: A list of pois building
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_poi_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /pois/category:
+    get:
+      tags:
+      - poi
+      summary: ""
+      description: "return list doors in building"
+      operationId: "GET_CATEGORY"
+      parameters:
+        - in: query
+          name: building   
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+      responses:
+        '200':
+          description: if building != Null , returning category of building , else returning all image poi of building
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_category_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+            application/octetstream:
+              schema:
+                description: A zip file ( include all image poi; have Content-Disposition:attachment;filename="image.zip" ) 
+                type: string
+                format: binary
+                example: a binary string 
+    post:
+      tags:
+      - poi
+      summary: ""
+      description: "add update list categories of building to DB"
+      operationId: "ADD_CATEGORY"
+      requestBody:
+        description: list categores of building
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add_update_category_body'
+      responses:
+        '200':
+          description: return status of request
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/no_data_response'
+                  - $ref: '#/components/schemas/error_response'
+    delete:
+      tags:
+      - poi
+      summary: ""
+      description: "delete category"
+      operationId: "DELETE_CATEGORY"
+      parameters:
+       - in: query
+         required: true
+         name: building   
+         schema:
+          type: string
+          format: uuid
+          example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+          
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/no_data_response'     
+                  - $ref: '#/components/schemas/error_response'           
+  /pois:
+    post:
+      tags:
+      - poi
+      summary: ""
+      description: "add new poi"
+      operationId: "ADD_POI"
+      requestBody:
+        description: informations of poi
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add_poi_body'
+      responses:
+        '200':
+          description: return id of poi
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/add_poi_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    put:
+      tags:
+      - poi
+      summary: ""
+      description: "update poi"
+      operationId: "UPDATE_POI"
+      requestBody:
+        description: informations of poi
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update_poi_body'
+      responses:
+        '200':
+          description: return id of poi
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    delete:
+      tags:
+      - poi
+      summary: ""
+      description: "delete poi"
+      operationId: "DELETE ONE POI"
+      parameters:
+        - in: query
+          name: id 
+          required: true
+          schema:
+            type: integer
+            format: int
+            example: 0
+          description: id of poi
+          
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'                
+#-----------------------------------------------------------beacon
+  /locations/{map}/beacons:
+    post:
+      tags:
+      - beacon
+      summary: ""
+      description: "add new beacon"
+      operationId: "ADD_BEACON"
+      parameters:
+        - in: path
+          name: map 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+      requestBody:
+        description: informations of beacon
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add_beacon_body'
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    put:
+      tags:
+      - beacon
+      summary: ""
+      description: "updat beacon"
+      operationId: "UPDATE_BEACON"
+      parameters:
+        - in: path
+          name: map 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+      requestBody:
+        description: informations of beacon
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/update_beacon_body'
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    get:
+      tags:
+      - beacon
+      summary: ""
+      description: "return all beacons in building"
+      operationId: "GET_ALL_BEACONS"
+      parameters:
+        - in: path
+          name: map 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: query
+          name: offset 
+          schema:
+            type: integer
+            format: int
+            example: -25200
+          description: offset of timestamptz
+      responses:
+        '200':
+          description: A list of beacons in building
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_beacon_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    delete:
+      tags:
+      - beacon
+      summary: ""
+      description: "delete all beacons"
+      operationId: "DELETE_ALL_BEACONS"
+      parameters:
+        - in: path
+          name: map 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'                
+  /locations/{map}/beacons/{mac}:
+    get:
+      tags:
+      - beacon
+      summary: ""
+      description: "return one beacon"
+      operationId: "GET_ONE_BEACONS"
+      parameters:
+        - in: path
+          name: map 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: path
+          name: mac 
+          required: true
+          schema:
+            type: string
+            example: RDL52810
+          description: mac of beacon
+        - in: query
+          name: offset 
+          schema:
+            type: integer
+            format: int
+            example: -25200
+          description: offset of timestamptz
+      responses:
+        '200':
+          description: return one beacon
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_beacon_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    delete:
+      tags:
+      - beacon
+      summary: ""
+      description: "delete one beacon"
+      operationId: "DELETE_ONE_BEACONS"
+      parameters:
+        - in: path
+          name: map 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: path
+          name: mac 
+          required: true
+          schema:
+            type: string
+            example: RDL52810
+          description: mac of beacon
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'                
+#-----------------------------------------------------------log_beacon
+  /locations/{map}:
+    post:
+      tags:
+      - log beacon
+      summary: ""
+      description: "add list of log beacons to DB and return coordinate"
+      operationId: "ADD_LOG_BEACON"
+      parameters:
+        - in: path
+          name: map 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+      requestBody:
+        description: informations of beacon
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add_log_beacon_body'
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/add_log_beacon_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+#-----------------------------------------------------------route
+  /route/getOneRoute:
+    post:
+      tags:
+      - "route"
+      summary: ""
+      description: "find path from start_point to end_point"
+      operationId: "GET_ONE_ROUTE_POST_METHOD"
+      requestBody:
+        description: informations start_point , end_point
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/get_one_route_body'
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_one_route_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    get:
+      tags:
+      - "route"
+      summary: ""
+      description: "find path from start_point to end_point"
+      operationId: "GET_ONE_ROUTE_GET_METHOD"
+      parameters:
+        - in: query
+          name: id 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: query
+          name: startpoint 
+          required: true
+          schema:
+            type: string
+            example: "106.627545;10.854631;0.000000"
+          description: start point ( string format "longitude;latitude;floor")
+        - in: query
+          name: endpoint 
+          required: true
+          schema:
+            type: string
+            example: "106.627280;10.854439;1.000000"
+          description: start point ( string format "longitude;latitude;floor")
+        - in: query
+          name: weight 
+          schema:
+            type: number
+            format: double
+            example: 75.000000
+          description: constraint weight
+        - in: query
+          name: height 
+          schema:
+            type: number
+            format: double
+            example: 1.5
+          description: constraint height
+        - in: query
+          name: width 
+          schema:
+            type: number
+            format: double
+            example: 1.5
+          description: constraint width
+        - in: query
+          name: elevator 
+          schema:
+            type: integer
+            format: int
+            example: 1
+          description: constraint elevator
+        - in: query
+          name: stair 
+          schema:
+            type: integer
+            format: int
+            example: 0
+          description: constraint stair
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_one_route_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /route/getMoreRoute:
+    get:
+      tags:
+      - "route"
+      summary: ""
+      description: "find path from one point to more points or or vice versa"
+      operationId: "GET_MORE_ROUTE"
+      parameters:
+        - in: query
+          name: id 
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+        - in: query
+          name: coordinates
+          description: "list coordinates of start_point and end_point. format every object {longitude;latitude;floor} and they are seperated by ',' "
+          required: true
+          schema:
+            type: string
+            example: "{106.627545;10.854396;0.000000},{106.627242;10.854471;0.000000},{106.627586;10.854471;2.000000},{106.627554;10.854424;5.000000},{106.627215;10.854471;5.000000}"
+        - in: query
+          name: "sources"
+          description: "list id in list coordinates of start_point. sources_size is fewer than coordinates_size "
+          required: true
+          schema:
+            type: string
+            example: "0,1,2,3,5"
+        - in: query
+          name: "destinates"
+          description: "list id in list coordinates of end_point. destinates_size is fewer than coordinates_size"
+          required: true
+          schema:
+            type: string
+            example: "5"
+        - in: query
+          name: weight 
+          schema:
+            type: number
+            format: double
+            example: 75.000000
+          description: constraint weight
+        - in: query
+          name: height 
+          schema:
+            type: number
+            format: double
+            example: 1.5
+          description: constraint height
+        - in: query
+          name: width 
+          schema:
+            type: number
+            format: double
+            example: 1.5
+          description: constraint width
+        - in: query
+          name: elevator 
+          schema:
+            type: integer
+            format: int
+            example: 1
+          description: constraint elevator
+        - in: query
+          name: stair 
+          schema:
+            type: integer
+            format: int
+            example: 0
+          description: constraint stair
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_more_route_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /route/findPoisAround:
+    post:
+      tags:
+      - "route"
+      summary: ""
+      description: "find pois around one position"
+      operationId: "FIND_POI_AROUND"
+      requestBody:
+        description: informations current_point with conditions
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/find_poi_around_body'
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/find_poi_around_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+  /route/constraints:
+    get:
+      tags:
+      - route
+      summary: ""
+      description: "return list constraints in building"
+      operationId: "GET_CONSTRAINT"
+      parameters:
+        - in: query
+          name: building   
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+      responses:
+        '200':
+          description: returning all constraints of building
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_constraint_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    post:
+      tags:
+      - route
+      summary: ""
+      description: "update list constraints of building"
+      operationId: "UPDATE_CONSTRAINT"
+      parameters:
+        - in: query
+          name: building   
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+      requestBody:
+        description: list constraints of building
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add_update_constraint_body'
+      responses:
+        '200':
+          description: return status of request
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/no_data_response'
+                  - $ref: '#/components/schemas/error_response'
+    delete:
+      tags:
+      - route
+      summary: ""
+      description: "delete list constraints"
+      operationId: "DELETE_CONSTRAINT"
+      parameters:
+        - in: query
+          required: true
+          name: building   
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+            description: guid of building
+        - in: query
+          required: true
+          name: "id"
+          description: "array of id constraints"
+          schema:
+            type: string
+            example: "{1,2,3}"
+      responses:
+        '200':
+          description: return request status
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/no_data_response'     
+                  - $ref: '#/components/schemas/error_response'           
+#-----------------------------------------------------------floor
+  /floor:
+    get:
+      tags:
+      - floor
+      summary: ""
+      description: "return list floorname of building"
+      operationId: "GET_FLOORNAME"
+      parameters:
+        - in: query
+          name: building   
+          schema:
+            type: string
+            format: uuid
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+          description: guid of building
+      responses:
+        '200':
+          description: returning list floorname
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/get_floorname_response'
+                  - $ref: '#/components/schemas/error_response'
+                  - $ref: '#/components/schemas/no_data_response'
+    post:
+      tags:
+      - floor
+      summary: ""
+      description: "add update list floorname of building"
+      operationId: "UPDATE_ADD_FLOORNAME"
+      requestBody:
+        description: list floorname of building
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/add_update_floorname_body'
+      responses:
+        '200':
+          description: return status of request
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/no_data_response'
+                  - $ref: '#/components/schemas/error_response'
+########################################################################## 
+components:
+  schemas:
+  #================================================================define
+    #---------------------------poi--------------------------------
+    general_poi:
+      type: object
+      properties:
+        level:
+          type: number
+          format: double
+          example: 1
+        buildingid:
+          type: string
+          format: uuid
+          example: e01ed528-a32f-46e2-a450-893d30aeb83b
+        name:
+          type: "string"
+          example: "kfc"
+        latitude:
+          type: "number"
+          example: "10.51245667"
+          format: "double"
+        longitude:
+          type: "number"
+          example: "106.51214124"
+          format: "double"
+        categoryname:
+          type: "string"
+          example: "fastfood"
+    particular_poi:
+      type: object
+      description: "describing some fields of category mapping categoryname in general poi"
+      properties:
+        amenity:
+          type: "string"
+          example: "good"
+        opening_time:
+          type: "string"
+          example: "12:59:59"
+        closing_time:
+          type: "string"
+          example: "12:59:59"
+        idstream:
+          type: "string"
+          example: T4.CauThang
+        wifiname:
+          type: "string"
+          example: VBDwifi
+        status:
+          type: "string"
+          example: good
+    information_poi:
+      allOf:
+       - $ref: '#/components/schemas/general_poi'
+       - $ref: '#/components/schemas/particular_poi'
+      type: object
+    poi:
+      type: "object"
+      properties:
+        general:
+          allOf:
+            - $ref: '#/components/schemas/general_poi'
+          type: object
+          properties:
+             id: 
+              type: integer 
+              format: int
+              example: 0
+        particular:
+          allOf:
+            - $ref: '#/components/schemas/particular_poi'
+    #---------------------------beacon-----------------------------
+    coordinate:
+      type: object
+      properties:
+        longitude:
+          type: number
+          format: double
+          example: 106.133
+        latitude:
+          type: number
+          format: double
+          example: 106.133
+    information_beacon:
+      type: object
+      properties:
+        uuid:
+          type: string
+          example: Redminote8
+        mac:
+          type: string
+          example: EW80ECCACD
+        name:
+          type: string
+          example: Rbeacon
+        major:
+          type: integer
+          format: int
+          example: -1
+        minor:
+          type: integer
+          format: int
+          example: -1
+        firmware_a_version:
+          type: string
+          example: fi a
+        firmware_b_version:
+          type: string
+          example: fi b
+        ap_mac:
+          type: string
+          example: ap mac
+        type:
+          type: string
+          example: type
+        map_type:
+          type: integer
+          format: int
+          example: 1
+        location:
+          $ref: '#/components/schemas/coordinate'
+        elevation:
+          type: integer
+          format: int
+          example: 1
+        txpower:
+          type: integer
+          format: int
+          example: -60
+        height:
+          type: "number"
+          example: 4.5
+          format: "double"
+        direction:
+          type: "number"
+          example: 180.0
+          format: "double"
+    beacon:
+      allOf:
+       - $ref: '#/components/schemas/information_beacon'
+      type: "object"
+      properties:
+        created_time: 
+          type: string 
+          example: "2022-08-11T15:26:40-07:00"
+        modified_time:
+          type: string 
+          example: "2022-08-11T15:26:40-07:00"
+    #---------------------------log_beacon-------------------------
+    information_log_beacon:
+      type: object
+      properties:
+        uuid:
+          type: string
+          example: Redminote8
+        mac:
+          type: string
+          example: EW80ECCACD
+        name:
+          type: string
+          example: Rbeacon
+        major:
+          type: integer
+          format: int
+          example: -1
+        minor:
+          type: integer
+          format: int
+          example: -1
+        rssi:
+          type: integer
+          format: int
+          example: 1
+        connected_time:
+          type: string
+          example: 2022-04-19T10:10:07+07:00
+    #---------------------------route-------------------------
+    node_def:
+      type: "object"
+      properties:
+        name:
+          type: string
+          example: elevator one
+        latitude:
+          type: "number"
+          example: "10.5"
+          format: "double"
+        longitude:
+          type: "number"
+          example: "106.5"
+          format: "double"
+        floor:
+          type: "integer"
+          example: "1"
+          format: "int"
+        ntype: 
+          type: integer
+          format: int
+          example: 1 
+          description: "is node's type( 0 : NONE, 1: IOPOINT, 2:  STAIR, 3: ELEVATOR, 4: CLICK, 5: POI)"
+    route_def:
+      type: "object"
+      properties:
+        direction:
+          type: "integer"
+          format: "int32"
+        length:
+          type: "number"
+          example: "10.5"
+          format: "double"
+        floor:
+          type: "integer"
+          format: "int32"
+    
+    position_def:
+      type: "object"
+      properties:
+        location:
+          type: "array"
+          items:
+            type: number
+            format: double
+          minItems: 2
+          maxItems: 2
+        name:
+          type: "string"
+          example: "KFC"
+        floor:
+          type: "integer"
+          example: "1"
+          format: "int"
+    route_N_N_def:
+      type: "object"
+      properties:
+        sources:
+          type: array
+          items:
+            $ref: "#/components/schemas/position_def"
+        destinations:
+          type: array
+          items:
+            $ref: "#/components/schemas/position_def"
+        durations:
+          type: array
+          description: durations_size = max(sources_size,destinations_size) - 1
+          items:
+            type: number 
+            format: double
+        distances:
+          type: array
+          description: distances_size = max(sources_size,destinations_size) - 1
+          items:
+            type: number 
+            format: double
+        
+    sub_constraint:
+      type: object
+      properties:
+        id: 
+          type: integer 
+          format: int
+          example: 0
+        info:
+          type: object
+          properties:
+            weight:
+              type: number
+              format: double
+              example: 1000
+            height:
+              type: number
+              format: double
+              example: 3
+            width:
+              type: number
+              format: double
+              example: 3
+    information_constraint:
+      allOf:
+        - $ref: '#/components/schemas/sub_constraint'
+      type: object
+      properties: 
+        building:
+          type: string 
+          example: 4ec5df06-3838-420c-8a7b-959a5cf42206
+        floorabove: 
+          type: number 
+          format: double
+          example: 2
+        floorblow: 
+          type: number 
+          format: double
+          example: 1
+        objectname:
+          type: string 
+          example: BOH16
+        type:
+          type: string 
+          example: elevator
+    constraint:
+      allOf:
+        - $ref: '#/components/schemas/information_constraint'
+    #---------------------------floor-------------------------
+    floordetail:
+      type: object
+      properties:
+        name: 
+          type: string 
+          example: tang G
+        number:
+          type: integer
+          format: int
+          example : 0
+  #================================================================request 
+    #---------------------------poi--------------------------------
+    add_poi_body:
+      allOf:
+       - $ref: '#/components/schemas/information_poi'
+      type: "object"
+    update_poi_body:
+      allOf:
+       - $ref: '#/components/schemas/information_poi'
+      type: "object"
+      properties:
+        id: 
+          type: integer 
+          format: int
+          example: 0
+          description: id of poi
+    add_update_category_body:
+      type: "object"
+      properties: 
+        building:
+          type: string
+          format: uuid
+          example: e01ed528-a32f-46e2-a450-893d30aeb83b
+        category:
+          type: array
+          items:
+            type: string
+            example: bar
+            minimum: 1
+    #---------------------------beacon-----------------------------
+    add_beacon_body:
+      allOf:
+       - $ref: '#/components/schemas/information_beacon'
+    update_beacon_body:
+      allOf:
+       - $ref: '#/components/schemas/beacon'
+    #---------------------------log_beacon-------------------------
+    add_log_beacon_body:
+      type: array
+      description: list log beacon
+      items:
+        $ref: '#/components/schemas/information_log_beacon'
+    #---------------------------route-------------------------
+    get_one_route_body:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+          example: e01ed528-a32f-46e2-a450-893d30aeb83b
+        start_floor:
+          type: "number"
+          example: 0
+          format: "double"
+        start_lat:
+          type: "number"
+          example: "10.5626"
+          format: "double"
+        start_lon:
+          type: "number"
+          example: "106.8634434"
+          format: "double"
+        end_floor:
+          type: "number"
+          example: 4.0
+          format: "double"
+        end_lat:
+          type: "number"
+          example: "10.5626"
+          format: "double"
+        end_lon:
+          type: "number"
+          example: "106.8634434"
+          format: "double"
+        options:
+          type: "object"
+          properties:
+            weight: 
+              type: "number"
+              example: "1005.5"
+              format: "double"
+            height: 
+              type: "number"
+              example: "2.5"
+              format: "double"
+            width: 
+              type: "number"
+              example: "1.5"
+              format: "double"
+            elevator: 
+              type: "boolean"
+              format: "bool"
+            stair: 
+              type: "boolean"
+              format: "bool"
+    find_poi_around_body:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+          example: e01ed528-a32f-46e2-a450-893d30aeb83b
+        current_lat:
+          type: "number"
+          example: "10.5626"
+          format: "double"
+        current_lon:
+          type: "number"
+          example: "106.8634434"
+          format: "double"
+        current_floor:
+          type: "number"
+          example: 4.0
+          format: "double"
+        options:
+          type: "object"
+          properties:
+            distance: 
+              type: "number"
+              example: "999.5"
+              format: "double"
+            duration: 
+              type: "number"
+              example: "5"
+              format: "double"
+        categoryid:
+          type: integer
+          format: int
+          example: 4
+          
+    add_update_constraint_body:
+      type: array
+      items:
+        $ref: '#/components/schemas/sub_constraint'
+    #---------------------------floor-------------------------
+    add_update_floorname_body:
+      type: array
+      description: list log beacon
+      items:
+        $ref: '#/components/schemas/floordetail'
+  #================================================================response
+    #---------------------------code-------------------------------
+    error_response:
+      type: "object"
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 400
+        message:
+          type: string
+          description: request status message
+          example: cannot find value
+        key:
+          type: string
+          description: invalid parameters in query or in body(not required)
+          example: location
+        key2:
+          type: string
+          description: invalid parameters in body(not required)
+          example: longitude
+    no_data_response:
+      type: "object"
+      properties:
+        code:
+          type: integer
+          description: code of request(NOT_FOUND, OK, BAD_REQUEST, NOT_IMPLEMENT)
+          example: 400
+        message:
+          type: string
+          description: request status message(cannot find data, request successfully, request fail, request not implemented)
+          example: request not implemented
+    #---------------------------building---------------------------
+    get_all_building_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              description: guid of building 
+              example: 4ec5df06-3838-420c-8a7b-959a5cf42206
+            category:
+              type: array
+              items:
+                type: string
+                example: bar
+            pois:
+              type: array
+              items:
+                $ref: '#/components/schemas/poi'
+            beacons:
+              type: array
+              items:
+                $ref: '#/components/schemas/beacon'
+    get_building3d_building_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            building3ds:
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                    description: guid of building 
+                    example: b64b5478-1040-46ed-b421-e83596760d3c
+                  name:
+                    type: string
+                    description: name of building 
+                    example: vietbando
+                  footprint:
+                    type: string
+                    description: footprint of building 
+                    example: geometry format wkt string
+                  created_time:
+                    type: string
+                    description: created time of building
+                    example: "2022-04-19T03:10:07+07:00"
+    get_id_building_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+              description: guid of building 
+              example: 4ec5df06-3838-420c-8a7b-959a5cf42206
+    get_centroid_building_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            centroid:
+              properties:
+                longitude:
+                  type: number
+                  format: double
+                  example: 106.62743970683072
+                latitude:
+                  type: number
+                  format: double
+                  example: 10.854468359393192
+    get_footprint_building_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            footprint:
+              description: list geometry in boundingbox
+              items:
+                type: object
+                properties:
+                  guid: 
+                    type: string
+                    example: e01ed528-a32f-46e2-a450-893d30aeb83b
+                  check:
+                    type: boolean
+                    description: check data existing of this building 
+                    example: true
+                  type:
+                    type: string
+                    description: geometry type( multipolygon, multilline,..)
+                    example: MultiPolygon
+                  coordinates:
+                    type: array
+                    items:
+                      type: array
+                      description: array sub geomtry( polygon,..)
+                      items:
+                        type: array
+                        description: array hole vs linearing
+                        items:
+                          type: array
+                          items:
+                            type: number
+                            format: double
+                          minItems: 2
+                          maxItems: 2
+    #---------------------------poi--------------------------------
+    get_poi_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            pois:
+              type: array
+              items:
+                $ref: '#/components/schemas/poi'
+    get_category_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            category:
+              type: array
+              items:
+                type: string
+                example: bar
+    add_poi_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            id:
+              type: integer
+              format: int 
+              example: 0
+    #---------------------------beacon-----------------------------
+    get_beacon_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            beacons:
+              type: array
+              items:
+                $ref: '#/components/schemas/beacon'
+    #---------------------------log_beacon-------------------------
+    add_log_beacon_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            building:
+              type: string
+              example: e01ed528-a32f-46e2-a450-893d30aeb83b
+            floor:
+              type: number 
+              format: double
+              example: 1.0
+            coordinate:
+              $ref: '#/components/schemas/coordinate'
+            accuracy:
+              type: number 
+              format: double
+              example: 100.0
+    #---------------------------route-------------------------
+    get_one_route_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            status:
+              type: string
+              description: finding path status ( OK , not found ). If status is "not found", route tag is not exist
+              example: OK
+            route:
+              type: object
+              properties:
+                nodes:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/node_def"
+                paths:
+                  type: array
+                  items:
+                    $ref: "#/components/schemas/route_def"
+                checkMove:
+                  type: integer
+                  format: int
+                  example: 2
+                length:
+                  type: number 
+                  format: double
+                  example: 57.9000001549720
+    get_more_route_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            status:
+              type: string
+              description: finding path status ( OK , not found ). If status is "not found", some tags in route_N_N_def is not exist
+              example: OK
+          allOf:
+            - $ref: "#/components/schemas/route_N_N_def"
+    find_poi_around_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            status:
+              type: string
+              description: finding path status ( OK , not found ). If status is "not found", some tags in route_N_N_def is not exist
+              example: OK
+            sources:
+              type: array
+              description: sources_size = 1, it is mainly current_point 
+              items:
+                $ref: "#/components/schemas/position_def"
+            destinations:
+              type: array
+              description: destinations_size is equal size of found pois
+              items:
+                $ref: "#/components/schemas/position_def"
+            durations:
+              type: array
+              description: durations_size is equal size of found pois
+              items:
+                type: number 
+                format: double
+            distances:
+              type: array
+              description: distances_size is equal size of found pois
+              items:
+                type: number 
+                format: double
+    get_constraint_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            constraints:
+              type: array
+              items:
+                $ref: '#/components/schemas/constraint'
+    #---------------------------floor-------------------------
+    get_floorname_response:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: code of request
+          example: 200
+        message:
+          type: string
+          description: request status message
+          example: request successfully
+        data:
+          properties:
+            floorname:
+              type: array
+              items:
+                $ref: '#/components/schemas/floordetail'
+##########################################################################     
+externalDocs:
+  description: "Find out more about VBD API"
+  url: "https://api.vietbando.com/"

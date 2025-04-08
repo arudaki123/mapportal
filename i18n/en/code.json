@@ -1,0 +1,59 @@
+{
+    "homepage.title": {
+        "message": "Vietbando Documentation"
+    },
+    "homepage.description": {
+        "message": "Explore Vietbando products and solutions."
+    },
+    "homepage.welcome": {
+        "message": "Welcome to Vietbando Documentation"
+    },
+    "homepage.tagline": {
+        "message": "Discover our innovative mapping and navigation solutions."
+    },
+    "common.viewDocs": {
+        "message": "View Documentation"
+    },
+    "product.indoorNavigation.name": {
+        "message": "Vietbando Indoor Navigation"
+    },
+    "product.indoorNavigation.description": {
+        "message": "Navigate indoor spaces effortlessly."
+    },
+    "product.desktop.name": {
+        "message": "Vietbando Desktop"
+    },
+    "product.desktop.description": {
+        "message": "Powerful desktop tools for mapping and analysis."
+    },
+    "product.gisonline.name": {
+        "message": "GISOnline"
+    },
+    "product.gisonline.description": {
+        "message": "A comprehensive web-based GIS platform."
+    },
+    "product.land.name": {
+        "message": "Vietbando Land"
+    },
+    "product.land.description": {
+        "message": "Efficient tools for land management and planning."
+    },
+    "product.mapServices.name": {
+        "message": "Vietbando Map Services"
+    },
+    "product.mapServices.description": {
+        "message": "Advanced APIs for seamless map integrations."
+    },
+    "product.ogcServices.name": {
+        "message": "Vietbando OGC Services"
+    },
+    "product.ogcServices.description": {
+        "message": "Standards-compliant OGC web services."
+    },
+    "product.workflow.name": {
+        "message": "Vietbando Workflow"
+    },
+    "product.workflow.description": {
+        "message": "Streamlined tools for workflow management."
+    }
+}

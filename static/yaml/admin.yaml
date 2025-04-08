@@ -1,0 +1,724 @@
+openapi: 3.0.3
+info:
+  title: ADMIN SERVER
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://{{host}}
+paths:
+  /admin/v1/authorization:
+    get:
+      tags:
+        - AUTHORIZE
+      summary: GET ALL AUTHO
+      description: GET ALL AUTHO
+      operationId: getAllAutho
+      parameters:
+        - name: productid
+          in: query
+          schema:
+            type: string
+            example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    put:
+      tags:
+        - AUTHORIZE
+      summary: UPDATE AUTHO
+      description: UPDATE AUTHO
+      operationId: updateAutho
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                info:
+                  type: string
+                  example: >-
+                    {"camera": [{"camera_id": [875,882],"building":
+                    "b64b5478-1040-46ed-b421-e83596760d3c"}]}
+                role:
+                  type: string
+                  example: camera manager
+                service:
+                  type: string
+                  example: IndoorNavigation
+                user_name:
+                  type: string
+                  example: camera_manager
+            examples:
+              UPDATE AUTHO:
+                value:
+                  info: >-
+                    {"camera": [{"camera_id": [875,882],"building":
+                    "b64b5478-1040-46ed-b421-e83596760d3c"}]}
+                  role: camera manager
+                  service: IndoorNavigation
+                  user_name: camera_manager
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+        - AUTHORIZE
+      summary: CREATE AUTHO
+      description: CREATE AUTHO
+      operationId: createAutho
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                buildingid:
+                  type: string
+                  example: e01ed528-a32f-46e2-a450-893d30aeb83b
+                productid:
+                  type: string
+                  example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                roleid:
+                  type: string
+                  example: 79431706-20c8-49ac-9078-fe658c64aedd
+                userid:
+                  type: string
+                  example: 16a57632-d9c5-4d2e-847e-6e4a4e132de5
+            examples:
+              CREATE AUTHO:
+                value:
+                  buildingid: e01ed528-a32f-46e2-a450-893d30aeb83b
+                  productid: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                  roleid: 79431706-20c8-49ac-9078-fe658c64aedd
+                  userid: 16a57632-d9c5-4d2e-847e-6e4a4e132de5
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    delete:
+      tags:
+        - AUTHORIZE
+      summary: DELETE AUTHO
+      description: DELETE AUTHO
+      operationId: deleteAutho
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /admin/v1/authorization/permission:
+    get:
+      tags:
+        - TMP AUTHORIZE
+      summary: GET ALL TMP AUTHO
+      description: GET ALL TMP AUTHO
+      operationId: getAllTmpAutho
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    put:
+      tags:
+        - TMP AUTHORIZE
+      summary: UPDATE TMP AUTHO
+      description: UPDATE TMP AUTHO
+      operationId: updateTmpAutho
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: 32192820-3bec-4aa2-a548-f7475412e20f
+                status:
+                  type: string
+                  example: accept
+            examples:
+              UPDATE TMP AUTHO:
+                value:
+                  id: 32192820-3bec-4aa2-a548-f7475412e20f
+                  status: accept
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+        - TMP AUTHORIZE
+      summary: CREATE TMP AUTHO
+      description: CREATE TMP AUTHO
+      operationId: createTmpAutho
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                buildingid:
+                  type: string
+                  example: ''
+                productid:
+                  type: string
+                  example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                roleid:
+                  type: string
+                  example: eb37ebb3-c886-4ed6-8c87-5d04f1a54f7a
+                userid:
+                  type: string
+                  example: c22f41e6-9b31-4ba3-880e-9446a79f66e4
+            examples:
+              CREATE TMP AUTHO:
+                value:
+                  buildingid: ''
+                  productid: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                  roleid: eb37ebb3-c886-4ed6-8c87-5d04f1a54f7a
+                  userid: c22f41e6-9b31-4ba3-880e-9446a79f66e4
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    delete:
+      tags:
+        - TMP AUTHORIZE
+      summary: DELETE AUTHO
+      description: DELETE AUTHO
+      operationId: deleteAutho1
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: ''
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /admin/v1/user:
+    get:
+      tags:
+        - USER
+      summary: GET USER
+      description: GET USER
+      operationId: getUser
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+            example: all
+        - name: productid
+          in: query
+          schema:
+            type: string
+            example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    put:
+      tags:
+        - USER
+      summary: UPDATE USER ORTHER
+      description: UPDATE USER ORTHER
+      operationId: updateUserOrther
+      parameters:
+        - name: productid
+          in: query
+          schema:
+            type: string
+            example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  example: b96f21ef-0854-4a9a-94b4-6994a8374d5c
+                new_password:
+                  type: string
+                  example: oke
+            examples:
+              CHANGE PASSWORD:
+                value:
+                  id: b96f21ef-0854-4a9a-94b4-6994a8374d5c
+                  new_password: oke
+              UPDATE USER ORTHER:
+                value:
+                  address: test3
+                  avatar: >-
+                    iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAB7fSURBVHhe7d0tmF63mQbgssLCwsLAwEJDw0BDQ8NAwzDDQMNAw8LAQMNAw8DAwtJdPW2nOzuV50efpKOjc9/X9aDtesbx9+noSK9e
+                  email: test3@gmail.com
+                  id: a8edecef-25d2-4644-98c2-0d41e3b0cd86
+                  name: test3
+                  new_password: test
+                  phone_number: '123'
+                  user_name: test3
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+        - USER
+      summary: REGISTER - INIT USER
+      description: REGISTER - INIT USER
+      operationId: registerInitUser
+      parameters:
+        - name: productid
+          in: query
+          schema:
+            type: string
+            example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                address:
+                  type: string
+                  example: QT park
+                email:
+                  type: string
+                  example: minior@gmail.vn
+                name:
+                  type: string
+                  example: Nguyễn Văn minior
+                password:
+                  type: string
+                  example: minior
+                phone_number:
+                  type: string
+                  example: '0123456789'
+                productid:
+                  type: string
+                  example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                user_name:
+                  type: string
+                  example: minior
+            examples:
+              REGISTER - INIT USER:
+                value:
+                  address: QT park
+                  email: minior@gmail.vn
+                  name: Nguyễn Văn minior
+                  password: minior
+                  phone_number: '0123456789'
+                  productid: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                  user_name: minior
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    delete:
+      tags:
+        - USER
+      summary: DELETE USER
+      description: DELETE USER
+      operationId: deleteUser
+      parameters:
+        - name: user_name
+          in: query
+          schema:
+            type: string
+            example: test10
+        - name: productid
+          in: query
+          schema:
+            type: string
+            example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /admin/v1/user/link:
+    post:
+      tags:
+        - USER
+      summary: LINK TO ORTHER PRODUCT
+      description: LINK TO ORTHER PRODUCT
+      operationId: linkToOrtherProduct
+      parameters:
+        - name: ''
+          in: query
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+                  example: admin
+                productid:
+                  type: string
+                  example: 6e229822-92a9-4503-8b01-971fb5a0d3ec
+                user_name:
+                  type: string
+                  example: admin
+            examples:
+              LINK TO ORTHER PRODUCT:
+                value:
+                  password: admin
+                  productid: 6e229822-92a9-4503-8b01-971fb5a0d3ec
+                  user_name: admin
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /admin/v1/role:
+    get:
+      tags:
+        - ROLE
+      summary: ROLE
+      description: ROLE
+      operationId: role
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+        - ROLE
+      summary: CREAT/UPDATE ROLE
+      description: CREAT/UPDATE ROLE
+      operationId: creatUpdateRole
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: minio_user
+                rank:
+                  type: string
+                  example: '00'
+            examples:
+              CREAT/UPDATE ROLE:
+                value:
+                  name: minio_user
+                  rank: '00'
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    delete:
+      tags:
+        - ROLE
+      summary: ROLE
+      description: ROLE
+      operationId: role1
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: f4ac78d8-ef2a-4cbf-a200-355e2d55baf4
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /admin/v1/rbac:
+    get:
+      tags:
+        - RBAC
+      summary: RBAC
+      description: RBAC
+      operationId: rbac
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+        - RBAC
+      summary: CREAT/UPDATE RBAC
+      description: CREAT/UPDATE RBAC
+      operationId: creatUpdateRbac
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                apiid:
+                  type: string
+                  example: e236605a-7621-4a94-8518-9ccf9a99db81
+                roleid:
+                  type: string
+                  example: 79431706-20c8-49ac-9078-fe658c64aedd
+            examples:
+              CREAT/UPDATE RBAC:
+                value:
+                  apiid: e236605a-7621-4a94-8518-9ccf9a99db81
+                  roleid: 79431706-20c8-49ac-9078-fe658c64aedd
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    delete:
+      tags:
+        - RBAC
+      summary: RBAC
+      description: RBAC
+      operationId: rbac1
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: 9116302c-8cb4-43da-b11f-82b8f7a77828
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /admin/v1/api:
+    get:
+      tags:
+        - API
+      summary: API
+      description: API
+      operationId: api
+      parameters:
+        - name: productid
+          in: query
+          schema:
+            type: string
+            example: 00f57f48-c918-4939-97b0-0b3590e5e8f8
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    put:
+      tags:
+        - API
+      summary: UPDATE API
+      description: UPDATE API
+      operationId: updateApi
+      parameters:
+        - name: productid
+          in: query
+          schema:
+            type: string
+            example: 00f57f48-c918-4939-97b0-0b3590e5e8f8
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                attribute:
+                  type: string
+                  example: '[]'
+                id:
+                  type: string
+                  example: 64af45ad-e80b-4a3a-9636-5aaedcf3034d
+                method:
+                  type: string
+                  example: PUT
+                resource:
+                  type: string
+                  example: test
+                root:
+                  type: string
+                  example: test update
+                sub_resource:
+                  type: string
+                  example: default
+                version:
+                  type: string
+                  example: v1
+            examples:
+              UPDATE API:
+                value:
+                  attribute: '[]'
+                  id: 64af45ad-e80b-4a3a-9636-5aaedcf3034d
+                  method: PUT
+                  resource: test
+                  root: test update
+                  sub_resource: default
+                  version: v1
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+        - API
+      summary: CREAT API
+      description: CREAT API
+      operationId: creatApi
+      parameters:
+        - name: productid
+          in: query
+          schema:
+            type: string
+            example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                attribute:
+                  type: string
+                  example: ''
+                method:
+                  type: string
+                  example: PUT
+                resource:
+                  type: string
+                  example: registration
+                root:
+                  type: string
+                  example: schedule
+                sub_resource:
+                  type: string
+                  example: ''
+                version:
+                  type: string
+                  example: v1
+            examples:
+              CREAT API:
+                value:
+                  attribute: ''
+                  method: PUT
+                  resource: registration
+                  root: schedule
+                  sub_resource: ''
+                  version: v1
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    delete:
+      tags:
+        - API
+      summary: API
+      description: API
+      operationId: api1
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: b7ae555a-d1a5-4bb9-bcbc-d97e8eb5ae19
+        - name: productid
+          in: query
+          schema:
+            type: string
+            example: 00f57f48-c918-4939-97b0-0b3590e5e8f8
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /admin/v1/resource:
+    get:
+      tags:
+        - RESOURCE
+      summary: GET RESOURCE
+      description: GET RESOURCE
+      operationId: getResource
+      parameters:
+        - name: rscname
+          in: query
+          schema:
+            type: string
+            example: building
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+        - RESOURCE
+      summary: POST RESOURCE
+      description: POST RESOURCE
+      operationId: postResource
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                auid:
+                  type: string
+                  example: buildingmanagerid
+                belongid:
+                  type: string
+                  example: buildingid
+                belongname:
+                  type: string
+                  example: building
+                rscid:
+                  type: string
+                  example: poimanagerid
+                rscname:
+                  type: string
+                  example: user
+            examples:
+              POST RESOURCE:
+                value:
+                  auid: buildingmanagerid
+                  belongid: buildingid
+                  belongname: building
+                  rscid: poimanagerid
+                  rscname: user
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: token
+      in: header
+tags:
+  - name: AUTHORIZE
+  - name: TMP AUTHORIZE
+  - name: USER
+  - name: ROLE
+  - name: RBAC
+  - name: API
+  - name: RESOURCE

@@ -1,0 +1,126 @@
+openapi: 3.0.0
+info:
+  title: "ServiceMesh API"
+  description: "Auto-generated OpenAPI 3.0 specification"
+  version: "1.0.0"
+servers:
+  - url: "http://{{host}}:{{port}}"
+tags:
+  - name: "required api your service"
+    description: "APIs related to required services"
+  - name: "api from servicemesh"
+    description: "APIs provided by servicemesh"
+
+paths:
+  /healthy:
+    get:
+      tags:
+        - "required api your service"
+      summary: "Get Healthy"
+      description: "Checks the health of the service."
+      parameters: []
+      responses:
+        '200':
+          description: "Successful response"
+  /config:
+    get:
+      tags:
+        - "required api your service"
+      summary: "Get Config"
+      description: "Retrieve the configuration of the service."
+      parameters: []
+      responses:
+        '200':
+          description: "Successful response"
+    post:
+      tags:
+        - "required api your service"
+      summary: "Update Config"
+      description: "Update the configuration of the service."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                app_token:
+                  type: string
+                config:
+                  type: object
+      responses:
+        '200':
+          description: "Configuration updated successfully."
+  /servicemesh/v1/register:
+    post:
+      tags:
+        - "api from servicemesh"
+      summary: "Register Mesh"
+      description: "Register the service mesh before starting your service."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                app_token:
+                  type: string
+                description:
+                  type: string
+                service_guid:
+                  type: string
+                host:
+                  type: string
+                port:
+                  type: integer
+                service_type:
+                  type: string
+                config:
+                  type: object
+      responses:
+        '200':
+          description: "Service registered successfully."
+  /servicemesh/v1/healthy:
+    get:
+      tags:
+        - "api from servicemesh"
+      summary: "Get Healthy"
+      description: "Checks the health of the service mesh."
+      parameters:
+        - name: "service_guid"
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Healthy status returned successfully."
+  /servicemesh/v1/config/database:
+    get:
+      tags:
+        - "api from servicemesh"
+      summary: "Get Config from Database"
+      description: "Retrieve configuration from the database."
+      parameters:
+        - name: "service_guid"
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Database configuration retrieved successfully."
+  /servicemesh/v1/config/service:
+    get:
+      tags:
+        - "api from servicemesh"
+      summary: "Get Config from Service"
+      description: "Retrieve configuration from the service."
+      parameters:
+        - name: "service_guid"
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Service configuration retrieved successfully."

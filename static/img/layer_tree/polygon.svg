@@ -1,0 +1,76 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48px" height="48px" viewBox="0,0,256,256">
+	<defs>
+		<linearGradient x1="18.588" y1="4.306" x2="25.725" y2="44.785" gradientUnits="userSpaceOnUse" id="color-1">
+			<stop offset="0" stop-color="#339af0">
+			</stop>
+			<stop offset="1" stop-color="#21a366">
+			</stop>
+		</linearGradient>
+		<linearGradient x1="6.479" y1="39.045" x2="7.522" y2="44.962" gradientUnits="userSpaceOnUse" id="color-2">
+			<stop offset="0" stop-color="#ffd747">
+			</stop>
+			<stop offset="0.482" stop-color="#ffd645">
+			</stop>
+			<stop offset="1" stop-color="#f5bc00">
+			</stop>
+		</linearGradient>
+		<linearGradient x1="6.479" y1="9.045" x2="7.522" y2="14.962" gradientUnits="userSpaceOnUse" id="color-3">
+			<stop offset="0" stop-color="#ffd747">
+			</stop>
+			<stop offset="0.482" stop-color="#ffd645">
+			</stop>
+			<stop offset="1" stop-color="#f5bc00">
+			</stop>
+		</linearGradient>
+		<linearGradient x1="19.979" y1="3.045" x2="21.022" y2="8.962" gradientUnits="userSpaceOnUse" id="color-4">
+			<stop offset="0" stop-color="#ffd747">
+			</stop>
+			<stop offset="0.482" stop-color="#ffd645">
+			</stop>
+			<stop offset="1" stop-color="#f5bc00">
+			</stop>
+		</linearGradient>
+		<linearGradient x1="34.479" y1="8.045" x2="35.522" y2="13.962" gradientUnits="userSpaceOnUse" id="color-5">
+			<stop offset="0" stop-color="#ffd747">
+			</stop>
+			<stop offset="0.482" stop-color="#ffd645">
+			</stop>
+			<stop offset="1" stop-color="#f5bc00">
+			</stop>
+		</linearGradient>
+		<linearGradient x1="40.479" y1="25.045" x2="41.522" y2="30.962" gradientUnits="userSpaceOnUse" id="color-6">
+			<stop offset="0" stop-color="#ffd747">
+			</stop>
+			<stop offset="0.482" stop-color="#ffd645">
+			</stop>
+			<stop offset="1" stop-color="#f5bc00">
+			</stop>
+		</linearGradient>
+		<linearGradient x1="29.479" y1="39.045" x2="30.522" y2="44.962" gradientUnits="userSpaceOnUse" id="color-7">
+			<stop offset="0" stop-color="#ffd747">
+			</stop>
+			<stop offset="0.482" stop-color="#ffd645">
+			</stop>
+			<stop offset="1" stop-color="#f5bc00">
+			</stop>
+		</linearGradient>
+	</defs>
+	<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+		<g transform="scale(5.33333,5.33333)">
+			<path d="M30,44h-23c-1.104,0 -2,-0.896 -2,-2v-30c0,-0.79 0.466,-1.507 1.188,-1.827l13.5,-6c0.462,-0.207 0.985,-0.229 1.465,-0.063l14.5,5c0.576,0.198 1.03,0.649 1.233,1.225l6,17c0.229,0.646 0.11,1.363 -0.313,1.901l-11,14c-0.38,0.482 -0.96,0.764 -1.573,0.764zM9,40h20.028l9.72,-12.371l-5.313,-15.053l-12.842,-4.429l-11.593,5.153z" fill="url(#color-1)">
+			</path>
+			<circle cx="7" cy="42" r="3" fill="url(#color-2)">
+			</circle>
+			<circle cx="7" cy="12" r="3" fill="url(#color-3)">
+			</circle>
+			<circle cx="20.5" cy="6" r="3" fill="url(#color-4)">
+			</circle>
+			<circle cx="35" cy="11" r="3" fill="url(#color-5)">
+			</circle>
+			<circle cx="41" cy="28" r="3" fill="url(#color-6)">
+			</circle>
+			<circle cx="30" cy="42" r="3" fill="url(#color-7)">
+			</circle>
+		</g>
+	</g>
+</svg>

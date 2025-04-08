@@ -1,0 +1,253 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+    --ifm-color-primary: #E62311;
+    --ifm-color-primary-dark: #DF1B12;
+    --ifm-color-primary-darker: #277148;
+    --ifm-color-primary-darkest: #205d3b;
+    --ifm-color-primary-light: #33925d;
+    --ifm-color-primary-lighter: #359962;
+    --ifm-color-primary-lightest: #3cad6e;
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}  
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+    --ifm-color-primary: #E62311;
+    --ifm-color-primary-dark: #DF1B12;
+    --ifm-color-primary-darker: #1fa588;
+    --ifm-color-primary-darkest: #1a8870;
+    --ifm-color-primary-light: #29d5b0;
+    --ifm-color-primary-lighter: #32d8b4;
+    --ifm-color-primary-lightest: #4fddbf;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+.theme-code-block {
+    max-height: 400px; /* Set your desired max height */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+.layer_toolbar
+  {
+    p
+    {
+      img
+      {
+        padding-right: 0.25rem;
+      }
+      display: flex;
+      margin-bottom: 0.5rem;
+    }  
+}
+
+.navbar {
+    .navbar__brand {
+        align-items: center;
+    }
+    .navbar__logo {
+        height: 44px;
+    }
+    .navbar__title {
+        font-size: 18px;
+    }
+}
+
+.container-card{
+    max-width: 1440px;
+    padding: 40px 0 80px 0;
+    margin: 0 auto;
+    h1 {
+        text-align: center;
+    }
+    h4 {
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 64px;
+    }
+}
+
+.heroBanner_src-pages-index-module {
+    .container {
+        max-width: 1440px;
+        .hero-card {
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 0;
+            display: flex;
+            position: relative;
+            .hero-wrap {
+                grid-column-gap: 2px;
+                grid-row-gap: 2px;
+                flex: 1;
+                justify-content: center;
+                align-items: center;
+                padding-left: 40px;
+                padding-right: 40px;
+                display: flex;
+                position: relative;
+                overflow: hidden;
+                .hero-center {
+                    max-width: 620px;
+                    padding: 80px 16px;
+                    box-shadow: 0 2px 2px rgba(0, 0, 0, .03), 0 0 7.2px rgba(0, 0, 0, .02);
+                    .button {
+                        border-radius: 100px;
+                    }
+                    .hero__title {
+                        font-size: 48px;
+                    }
+                    .hero__subtitle {
+                        font-size: 18px;
+                        margin-bottom: 32px;
+                    }
+                } 
+                .hero-logo {                    
+                    background-color: #fff;
+                    border: 1px solid rgba(255, 255, 255, 0);
+                    border-radius: 16px;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80px;
+                    height: 80px;
+                    display: flex;
+                    box-shadow: 0 2px 2px rgba(0, 0, 0, .05);
+                    animation-duration: 12s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
+                    animation-fill-mode: none;
+                    .svg {
+                        width: 48px;
+                        height: 48px;
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
+                    }
+                }                
+                .hero-marquee-left {
+                    flex-flow: column;
+                    flex: 1;
+                    justify-content: center;
+                    align-self: stretch;
+                    align-items: flex-end;
+                    display: flex;
+                    position: relative;
+                    overflow: hidden;
+                    .logos-fader {
+                        z-index: 3;
+                        pointer-events: none;
+                        background-image: linear-gradient(90deg, #F2F2F2, rgba(255, 255, 255, 0) 30%, rgba(254, 254, 254, 0) 70%, #F2F2F2);
+                        position: absolute;
+                        top: 0%;
+                        bottom: 0%;
+                        left: 0%;
+                        right: 0%;
+                    }                   
+                    .hero-marquee-line {
+                        grid-column-gap: 40px;
+                        grid-row-gap: 40px;
+                        justify-content: flex-start;
+                        align-items: center;
+                        display: flex;
+                        position: absolute;
+
+                        .hero-logo {
+                            animation-name: floatRight;
+                            animation-delay: -1.5s;                        
+                        }
+                        &.top {
+                            transform: translate(0, -120%);
+                            .hero-logo {
+                                animation-name: floatRight;
+                                animation-delay: -3s;
+                            }
+                        }
+                        &.bottom {
+                            margin-left: 0;
+                            margin-right: 0;
+                            transform: translate(0, 120%);
+                            .hero-logo {
+                                animation-name: floatRight;
+                                animation-delay: 0s;
+                            }
+                        }
+                    }
+                }
+                .hero-marquee-right {
+                    flex-flow: column;
+                    flex: 1;
+                    justify-content: center;
+                    align-self: stretch;
+                    align-items: flex-start;
+                    display: flex;
+                    position: relative;
+                    overflow: hidden;
+                    .logos-fader {
+                        z-index: 3;
+                        pointer-events: none;
+                        background-image: linear-gradient(90deg, #F2F2F2, rgba(255, 255, 255, 0) 30%, rgba(254, 254, 254, 0) 70%, #F2F2F2);
+                        position: absolute;
+                        top: 0%;
+                        bottom: 0%;
+                        left: 0%;
+                        right: 0%;
+                    }
+                    .hero-marquee-line {
+                        grid-column-gap: 40px;
+                        grid-row-gap: 40px;
+                        justify-content: flex-start;
+                        align-items: center;
+                        display: flex;
+                        position: absolute;
+                        .hero-logo {
+                            animation-name: floatLeft;
+                            animation-delay: -1.5s;                        
+                        }
+                        &.top {
+                            transform: translate(0, -120%);
+                            .hero-logo {
+                                animation-name: floatLeft;
+                                animation-delay: -3s;
+                            }
+                        }
+                        &.bottom {
+                            margin-left: 0;
+                            margin-right: 0;
+                            transform: translate(0, 120%);
+                            .hero-logo {
+                                animation-name: floatLeft;
+                                animation-delay: 0s;
+                            }
+                        }
+                    }                       
+                }
+                
+                @keyframes floatLeft {
+                    0% {
+                        transform: translateX(0%)
+                    }
+        
+                    100% {
+                        transform: translateX(-600%)
+                    }
+                }
+        
+                @keyframes floatRight {
+                    0% {
+                        transform: translateX(0%)
+                    }
+        
+                    100% {
+                        transform: translateX(600%)
+                    }
+                }
+            }
+        }
+    }
+}

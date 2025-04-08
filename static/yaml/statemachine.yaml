@@ -1,0 +1,489 @@
+openapi: 3.0.3
+info:
+  title: STATEMACHINE
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://{{host}}
+paths:
+  /statemachine/v1/scheme:
+    get:
+      tags:
+        - SCHEME
+      summary: GET  SCHEME
+      description: GET  SCHEME
+      operationId: getScheme
+      parameters:
+        - name: schemeCode
+          in: query
+          schema:
+            type: string
+            example: '{{schemeCode}}'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    put:
+      tags:
+        - SCHEME
+      summary: Update Scheme
+      description: Update Scheme
+      operationId: updateScheme
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '{{schemeCode}}':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+        - SCHEME
+      summary: ADD SCHEME
+      description: ADD SCHEME
+      operationId: addScheme
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    delete:
+      tags:
+        - SCHEME
+      summary: DELETE  SCHEME
+      description: DELETE  SCHEME
+      operationId: deleteScheme
+      parameters:
+        - name: schemeCode
+          in: query
+          schema:
+            type: string
+            example: '{{schemeCode}}'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/schemeCode:
+    get:
+      tags:
+        - SCHEME
+      summary: GET ALL  SCHEME
+      description: GET ALL  SCHEME
+      operationId: getAllScheme
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/clear:
+    delete:
+      tags:
+        - SCHEME
+      summary: CLEAR ALL
+      description: CLEAR ALL
+      operationId: clearAll
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/GetInitState:
+    get:
+      tags:
+        - SCHEME2
+      summary: GET InitState
+      description: GET InitState
+      operationId: getInitstate
+      parameters:
+        - name: schemeCode
+          in: query
+          schema:
+            type: string
+            example: '{{schemeCode}}'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/GetAllActivities:
+    get:
+      tags:
+        - SCHEME2
+      summary: GetAllActivities
+      description: GetAllActivities
+      operationId: getallactivities
+      parameters:
+        - name: schemeCode
+          in: query
+          schema:
+            type: string
+            example: '{{schemeCode}}'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/GetFinalActivities:
+    get:
+      tags:
+        - SCHEME2
+      summary: GetFinalActivities
+      description: GetFinalActivities
+      operationId: getfinalactivities
+      parameters:
+        - name: schemeCode
+          in: query
+          schema:
+            type: string
+            example: '{{schemeCode}}'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/GetNextActivityByCommand:
+    get:
+      tags:
+        - SCHEME2
+      summary: GetNextActivityByCommand
+      description: GetNextActivityByCommand
+      operationId: getnextactivitybycommand
+      parameters:
+        - name: schemeCode
+          in: query
+          schema:
+            type: string
+            example: '{{schemeCode}}'
+        - name: commandName
+          in: query
+          schema:
+            type: string
+            example: cmd2
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/CreateInstance:
+    post:
+      tags:
+        - INSTANCE
+      summary: Create Instance
+      description: Create Instance
+      operationId: createInstance
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                schemeCode:
+                  type: string
+                  example: '{{schemeCode}}'
+            examples:
+              Create Instance:
+                value:
+                  schemeCode: '{{schemeCode}}'
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/GetAllInstance:
+    get:
+      summary: GetAllInstance
+      description: GetAllInstance
+      operationId: getallinstance
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/GetCurrentStateName:
+    get:
+      summary: GetCurrentStateName
+      description: GetCurrentStateName
+      operationId: getcurrentstatename
+      parameters:
+        - name: instanceId
+          in: query
+          schema:
+            type: string
+            example: '{{instanceId}}'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/GetCurrentState:
+    get:
+      summary: GetCurrentState
+      description: GetCurrentState
+      operationId: getcurrentstate
+      parameters:
+        - name: instanceId
+          in: query
+          schema:
+            type: string
+            example: '{{instanceId}}'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/GetCurrentActivity:
+    get:
+      summary: GetCurrentActivity
+      description: GetCurrentActivity
+      operationId: getcurrentactivity
+      parameters:
+        - name: instanceId
+          in: query
+          schema:
+            type: string
+            example: '{{instanceId}}'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/GetAvailableState:
+    get:
+      summary: GetAvailableState
+      description: GetAvailableState
+      operationId: getavailablestate
+      parameters:
+        - name: instanceId
+          in: query
+          schema:
+            type: string
+            example: '{{instanceId}}'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/GetAvailableCommands:
+    get:
+      summary: GetAvailableCommands
+      description: GetAvailableCommands
+      operationId: getavailablecommands
+      parameters:
+        - name: instanceId
+          in: query
+          schema:
+            type: string
+            example: '{{instanceId}}'
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/SetState:
+    post:
+      summary: SetState
+      description: SetState
+      operationId: setstate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                instanceId:
+                  type: string
+                  example: '{{instanceId}}'
+                stateName:
+                  type: string
+                  example: FinalActivity
+            examples:
+              SetState:
+                value:
+                  instanceId: '{{instanceId}}'
+                  stateName: FinalActivity
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /statemachine/v1/ExecuteCommand:
+    post:
+      summary: ExecuteCommand
+      description: ExecuteCommand
+      operationId: executecommand
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commandName:
+                  type: string
+                  example: cmd2
+                instanceId:
+                  type: string
+                  example: '{{instanceId}}'
+            examples:
+              ExecuteCommand:
+                value:
+                  commandName: cmd2
+                  instanceId: '{{instanceId}}'
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: token
+      in: header
+tags:
+  - name: SCHEME
+  - name: SCHEME2
+  - name: INSTANCE

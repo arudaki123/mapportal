@@ -1,0 +1,533 @@
+openapi: 3.0.3
+info:
+  title: ROUTE
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://{{host}}
+paths:
+  /indoors/v1/route/expansion:
+    get:
+      tags:
+        - ORTHER
+      summary: GET EXPENSION
+      description: GET EXPENSION
+      operationId: getExpension
+      parameters:
+        - name: coordinates
+          in: query
+          schema:
+            type: string
+            example: '[[106.627584881393659,10.854674487094604]]'
+        - name: vehicle
+          in: query
+          schema:
+            type: string
+            example: foot
+        - name: contours
+          in: query
+          schema:
+            type: string
+            example: '[{"time": 15.0,"color": "ff0000"},{"time": 20.0},{"distance": 2}]'
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /indoors/v1/route/isochrone:
+    get:
+      tags:
+        - ORTHER
+      summary: GET ISOCHRONE
+      description: GET ISOCHRONE
+      operationId: getIsochrone
+      parameters:
+        - name: coordinates
+          in: query
+          schema:
+            type: string
+            example: '[[106.627584881393659,10.854674487094604]]'
+        - name: vehicle
+          in: query
+          schema:
+            type: string
+            example: foot
+        - name: contours
+          in: query
+          schema:
+            type: string
+            example: '[{"time": 15.0,"color": "ff0000"},{"time": 20.0},{"distance": 2}]'
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /indoors/v1/route/intersection:
+    get:
+      tags:
+        - ORTHER
+      summary: GET INTERSECTION
+      description: GET INTERSECTION
+      operationId: getIntersection
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+            example: circle
+        - name: coordinates
+          in: query
+          schema:
+            type: string
+            example: '[[106.627584881393659,10.854674487094604]]'
+        - name: vehicle
+          in: query
+          schema:
+            type: string
+            example: driving
+        - name: contours
+          in: query
+          schema:
+            type: string
+            example: '[{"distance": 20,"color": "ff0000"}]'
+        - name: polygon
+          in: query
+          schema:
+            type: string
+            example: >-
+              [[[106.68805246960932,10.786005668415157],[106.68413928318392,10.777425072568676],[106.6914299221798,10.774404644615004],[106.70135264490426,10.77886662977184],[106.70025788441689,10.78561668669954],[106.69601859912194,10.788591239975005],[106.68805246960932,10.786074312195183]]]
+        - name: line
+          in: query
+          schema:
+            type: string
+            example: >-
+              [[[106.68805246960932,10.786005668415157],[106.68413928318392,10.777425072568676],[106.6914299221798,10.774404644615004],[106.70135264490426,10.77886662977184],[106.70025788441689,10.78561668669954],[106.69601859912194,10.788591239975005],[106.68805246960932,10.786074312195183]]]
+        - name: region
+          in: query
+          schema:
+            type: string
+            example: 760,761,764,765,766,767,768,770,771,772,774
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /indoors/v1/route/trip:
+    get:
+      tags:
+        - ORTHER
+      summary: GET TRIP
+      description: GET TRIP
+      operationId: getTrip
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+            example: circle
+        - name: coordinates
+          in: query
+          schema:
+            type: string
+            example: >-
+              [[106.6662033641,10.8004942441],[106.6583498561,10.7894704763],[106.6709669673,10.7801747864]]
+        - name: vehicle
+          in: query
+          schema:
+            type: string
+            example: foot
+        - name: contours
+          in: query
+          schema:
+            type: string
+            example: '[{"time": 100.0,"color": "ff0000"}]'
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /indoors/v1/route/getOneRoute:
+    get:
+      tags:
+        - GET ONE ROUTE
+      summary: Find 1-1 -  in in- Have Result Copy
+      description: Find 1-1 -  in in- Have Result Copy
+      operationId: find11InInHaveResultCopy
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+            example: in-in
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+        - name: startpoint
+          in: query
+          schema:
+            type: string
+            example: 106.627584881393659,10.854674487094604,1
+        - name: endpoint
+          in: query
+          schema:
+            type: string
+            example: 106.627496871410358,10.854640900801513,0
+        - name: barrier
+          in: query
+          schema:
+            type: string
+            example: 106.627579014061425,10.854658537721823,0,1,-7587127,-7587310
+        - name: engine
+          in: query
+          schema:
+            type: string
+            example: valhalla
+        - name: polygons
+          in: query
+          schema:
+            type: string
+            example: >-
+              [[[106.69707271940888,10.772030082471275],[106.69707271940888,10.770332490537427],[106.70006904144799,10.770332490537427],[106.70006904144799,10.772030082471275],[106.69707271940888,10.772030082471275]]]
+        - name: shortest
+          in: query
+          schema:
+            type: string
+            example: 'true'
+        - name: polygon
+          in: query
+          schema:
+            type: string
+            example: >-
+              [[[106.62377121280025,10.858305959269388],[106.62411721776317,10.858008296001629],[106.62377121280025,10.85800302762253],[106.62377121280025,10.858305959269388]]]
+        - name: vehicle
+          in: query
+          schema:
+            type: string
+            example: taxi
+        - name: encode
+          in: query
+          schema:
+            type: string
+            example: 'false'
+        - name: step
+          in: query
+          schema:
+            type: string
+            example: 'false'
+        - name: continue_straight
+          in: query
+          schema:
+            type: string
+            example: '1'
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /indoors/v0/route/getOneRoute:
+    get:
+      tags:
+        - GET ONE ROUTE
+      summary: get one route old version
+      description: get one route old version
+      operationId: getOneRouteOldVersion
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+        - name: startpoint
+          in: query
+          schema:
+            type: string
+            example: 106.627545;10.854631;0.000000
+        - name: endpoint
+          in: query
+          schema:
+            type: string
+            example: 106.627280;10.854439;1.000000
+        - name: weight
+          in: query
+          schema:
+            type: string
+            example: '75.000000'
+        - name: height
+          in: query
+          schema:
+            type: string
+            example: '1.700000'
+        - name: width
+          in: query
+          schema:
+            type: string
+            example: '0.400000'
+        - name: elevator
+          in: query
+          schema:
+            type: string
+            example: '1'
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /indoors/v1/route/getMoreRoute:
+    get:
+      tags:
+        - GET MORE ROUTE
+      summary: 'Find More Routes - 1-N - Have Result '
+      description: 'Find More Routes - 1-N - Have Result '
+      operationId: findMoreRoutes1NHaveResult
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+        - name: coordinates
+          in: query
+          schema:
+            type: string
+            example: >-
+              {106.627545;10.854396;0.000000},{106.627242;10.854471;1.000000},{106.627586;10.854471;2.000000},{106.627554;10.854424;5.000000},{106.627215;10.854471;5.000000},{106.627598;10.854527;6.000000},{106.627551;10.854566;4.000000}
+        - name: sources
+          in: query
+          schema:
+            type: string
+            example: '0'
+        - name: destinates
+          in: query
+          schema:
+            type: string
+            example: 1,2,3,4,5,6
+        - name: options
+          in: query
+          schema:
+            type: string
+            example: 75000.000000;1.700000;0.400000;1;0
+        - name: type
+          in: query
+          schema:
+            type: string
+            example: indoor
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /indoors/v1/route/findPoisAround:
+    get:
+      tags:
+        - SEARCH NEAR BY
+      summary: Search NearBy outDoor
+      description: Search NearBy outDoor
+      operationId: searchNearbyOutdoor
+      parameters:
+        - name: current_lon
+          in: query
+          schema:
+            type: string
+            example: '106.668817280193679'
+        - name: current_lat
+          in: query
+          schema:
+            type: string
+            example: '10.810864275763693'
+        - name: distance
+          in: query
+          schema:
+            type: string
+            example: '1000'
+        - name: duration
+          in: query
+          schema:
+            type: string
+            example: '100'
+        - name: number
+          in: query
+          schema:
+            type: string
+            example: '10'
+        - name: categoryid
+          in: query
+          schema:
+            type: string
+            example: >-
+              8472aa54-4f43-44ab-87e2-f3108085cff7,8472aa54-4f43-44ab-87e2-f3108085cff7
+        - name: content
+          in: query
+          schema:
+            type: string
+            example: Đường Trường Sơn
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: 4ec5df06-3838-420c-8a7b-959a5cf42206
+        - name: current_floor
+          in: query
+          schema:
+            type: string
+            example: '1'
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /indoors/v1/constraint:
+    get:
+      tags:
+        - CONSTRAINT
+      summary: CONSTRAINTS
+      description: CONSTRAINTS
+      operationId: constraints1
+      parameters:
+        - name: buildingid
+          in: query
+          schema:
+            type: string
+            example: b64b5478-1040-46ed-b421-e83596760d3c
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+        - CONSTRAINT
+      summary: CONSTRAINTS
+      description: CONSTRAINTS
+      operationId: constraints
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: 6be83044-1dca-4dcb-a422-7592a17f2b1f
+                  info:
+                    type: object
+                    properties:
+                      height:
+                        type: number
+                        example: 1000
+                      weight:
+                        type: number
+                        example: 1000
+                      width:
+                        type: number
+                        example: 30
+              example:
+                - id: 6be83044-1dca-4dcb-a422-7592a17f2b1f
+                  info:
+                    height: 1000
+                    weight: 1000
+                    width: 30
+            examples:
+              CONSTRAINTS:
+                value:
+                  - id: 6be83044-1dca-4dcb-a422-7592a17f2b1f
+                    info:
+                      height: 1000
+                      weight: 1000
+                      width: 30
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    delete:
+      tags:
+        - CONSTRAINT
+      summary: DELETE CONSTRAINT
+      description: DELETE CONSTRAINT
+      operationId: deleteConstraint
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: 6be83044-1dca-4dcb-a422-7592a17f2b1f
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+  /indoors/v1/route/findVehiclesAround:
+    get:
+      tags:
+        - SEARCH VEHICLE
+      summary: Search vehicle indooor
+      description: Search vehicle indooor
+      operationId: searchVehicleIndooor
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+            example: e01ed528-a32f-46e2-a450-893d30aeb83b
+        - name: current_floor
+          in: query
+          schema:
+            type: string
+            example: '0'
+        - name: current_lon
+          in: query
+          schema:
+            type: string
+            example: '106.627607036889060'
+        - name: current_lat
+          in: query
+          schema:
+            type: string
+            example: '10.854534636317984'
+        - name: distance
+          in: query
+          schema:
+            type: string
+            example: '1000'
+        - name: duration
+          in: query
+          schema:
+            type: string
+            example: '100000'
+        - name: categoryid
+          in: query
+          schema:
+            type: string
+            example: 48553969-00a9-43f8-8dc7-c7a1e1dc9871
+        - name: number
+          in: query
+          schema:
+            type: string
+            example: '10'
+        - name: content
+          in: query
+          schema:
+            type: string
+            example: Đường Trường Sơn
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: token
+      in: header
+tags:
+  - name: ORTHER
+  - name: GET ONE ROUTE
+  - name: GET MORE ROUTE
+  - name: SEARCH NEAR BY
+  - name: CONSTRAINT
+  - name: SEARCH VEHICLE

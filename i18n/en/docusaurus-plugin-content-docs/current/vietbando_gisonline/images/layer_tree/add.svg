@@ -1,0 +1,11 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0,0,256,256">
+	<g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style="mix-blend-mode: normal">
+		<g transform="scale(4,4)">
+			<path d="M35,10h-6c-2.209,0 -4,1.791 -4,4v36c0,2.209 1.791,4 4,4h6c2.209,0 4,-1.791 4,-4v-36c0,-2.209 -1.791,-4 -4,-4z" fill="#37d0ee" />
+			<path d="M54,35v-6c0,-2.209 -1.791,-4 -4,-4h-36c-2.209,0 -4,1.791 -4,4v6c0,2.209 1.791,4 4,4h36c2.209,0 4,-1.791 4,-4z" fill="#37d0ee" />
+			<path d="M54,29v6c0,2.209 -1.791,4 -4,4h-11v11c0,2.209 -1.791,4 -4,4h-6c-0.71,0 -1.39,-0.19 -1.97,-0.52c0.26,-2.52 2.39,-4.48 4.97,-4.48h1c0.552,0 1,-0.448 1,-1v-9c0,-2.761 2.239,-5 5,-5h9c0.552,0 1,-0.448 1,-1v-1c0,-2.58 1.96,-4.71 4.48,-4.97c0.33,0.58 0.52,1.26 0.52,1.97z" fill="#000000" opacity="0.15" />
+			<path d="M36.97,10.52c-0.26,2.52 -2.39,4.48 -4.97,4.48h-2v10c0,2.761 -2.239,5 -5,5h-9c-0.552,0 -1,0.448 -1,1v1c0,2.58 -1.96,4.71 -4.48,4.97c-0.33,-0.58 -0.52,-1.26 -0.52,-1.97v-6c0,-2.209 1.791,-4 4,-4h11v-11c0,-2.209 1.791,-4 4,-4h6c0.71,0 1.39,0.19 1.97,0.52z" fill="#ffffff" opacity="0.3" />
+			<path d="M28.5,21c-0.829,0 -1.5,-0.672 -1.5,-1.5v-4c0,-1.93 1.57,-3.5 3.5,-3.5h1c0.829,0 1.5,0.672 1.5,1.5c0,0.828 -0.671,1.5 -1.5,1.5h-1c-0.276,0 -0.5,0.225 -0.5,0.5v4c0,0.828 -0.671,1.5 -1.5,1.5z" fill="#ffffff" />
+		</g>
+	</g>
+</svg>

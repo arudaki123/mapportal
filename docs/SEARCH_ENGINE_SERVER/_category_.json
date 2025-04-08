@@ -1,0 +1,8 @@
+{
+    "label": "VIETBANDO SEARCH ENGINE SERVER",
+    "position": 12,
+    "link": {
+        "type": "generated-index",
+        "description": "This is a custom description"
+    }
+}

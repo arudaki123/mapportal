@@ -1,9 +1,10 @@
 {
-  "name": "mapportal",
+  "name": "my-website",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
+    "dev": "tinacms dev -c \"docusaurus start\" ",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
@@ -11,20 +12,45 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc",
+    "generate-docs": "node scripts/generateDocsTree.js"
   },
   "dependencies": {
-    "@docusaurus/core": "3.5.2",
-    "@docusaurus/preset-classic": "3.5.2",
+    "@docusaurus/core": "3.3.2",
+    "@docusaurus/preset-classic": "3.3.2",
+    "@easyops-cn/docusaurus-search-local": "^0.45.0",
+    "@gitbeaker/node": "^35.8.1",
     "@mdx-js/react": "^3.0.0",
+    "@tinacms/cli": "^1.9.3",
+    "@tinacms/datalayer": "^1.3.14",
     "clsx": "^2.0.0",
+    "docusaurus-theme-redoc": "^2.2.0",
+    "docusaurus2-dotenv": "^1.4.0",
+    "framer-motion": "^11.11.17",
+    "mongodb-level": "^0.0.4",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "tinacms": "^2.7.3",
+    "tinacms-authjs": "^10.0.3",
+    "tinacms-gitprovider-github": "^2.0.14",
+    "title": "^4.0.1",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.5.2",
-    "@docusaurus/types": "3.5.2"
+    "@docusaurus/module-type-aliases": "3.3.2",
+    "@docusaurus/tsconfig": "3.3.2",
+    "@docusaurus/types": "3.3.2",
+    "@eslint/js": "^9.13.0",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "globals": "^15.11.0",
+    "sass": "1.70.0",
+    "sass-loader": "^12.1.0",
+    "typescript": "~5.2.2",
+    "typescript-eslint": "^8.11.0"
   },
   "browserslist": {
     "production": [
@@ -40,5 +66,9 @@
   },
   "engines": {
     "node": ">=18.0"
-  }
+  },
+  "main": "/src/pages/index.tsx",
+  "repository": "https://git.vietbando.net/namnv/mapportal.git",
+  "author": "quyenpn <phamnhuquyen@vietbando.vn>",
+  "license": "MIT"
 }

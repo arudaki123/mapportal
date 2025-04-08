@@ -1,0 +1,78 @@
+<svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="64px"
+    height="64px"
+    viewBox="0,0,256,256"
+>
+    <g
+        fill="none"
+        fillRule="nonzero"
+        stroke="none"
+        strokeWidth="none"
+        strokeLinecap="none"
+        strokeLinejoin="none"
+        strokeMiterlimit="10"
+        strokeDasharray=""
+        strokeDashoffset="0"
+        fontFamily="none"
+        fontWeight="none"
+        fontSize="none"
+        textAnchor="none"
+        style="mix-blend-mode: normal"
+    >
+        <g transform="scale(4,4)">
+            <path
+                d="M48.81,26.838l-11.137,-11.137c-1.215,-1.215 -0.54,-3.295 1.157,-3.564l13.124,-2.086c1.47,-0.234 2.741,1.036 2.507,2.507l-2.086,13.124c-0.27,1.695 -2.35,2.37 -3.565,1.156z"
+                fill="#37d0ee"
+                stroke="none"
+                strokeWidth="1"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+            />
+            <path
+                d="M44.182,16.087l4.243,4.243c0.781,0.781 0.781,2.047 0,2.828l-26.167,26.166l-7.071,-7.071l26.166,-26.166c0.781,-0.781 2.047,-0.781 2.829,0z"
+                fill="#37d0ee"
+                stroke="none"
+                strokeWidth="1"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+            />
+            <path
+                d="M16.69,36.684l11.137,11.137c1.215,1.215 0.54,3.295 -1.157,3.564l-13.124,2.086c-1.47,0.234 -2.741,-1.036 -2.507,-2.507l2.086,-13.124c0.27,-1.696 2.35,-2.371 3.565,-1.156z"
+                fill="#37d0ee"
+                stroke="none"
+                strokeWidth="1"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+            />
+            <path
+                d="M38.83,12.136c-1.697,0.27 -2.372,2.35 -1.157,3.564l2.033,2.033l-3.535,3.535c0.976,0.976 2.256,1.465 3.535,1.465c1.279,0 2.56,-0.488 3.535,-1.465c1.346,-1.345 1.765,-3.267 1.255,-4.971l3.321,-0.527c2.726,-0.433 4.585,-2.995 4.153,-5.721c-0.006,0.001 -0.011,0 -0.017,0.001z"
+                fill="#ffffff"
+                stroke="none"
+                strokeWidth="1"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                opacity="0.3"
+            />
+            <path
+                d="M28.756,35.756l-6.497,6.497c-1.346,1.345 -1.765,3.267 -1.255,4.971l-4.01,0.637c-2.683,0.427 -4.515,2.916 -4.161,5.595c0.229,0.039 0.466,0.056 0.712,0.017l13.124,-2.086c1.697,-0.27 2.372,-2.35 1.157,-3.564l-2.033,-2.033l10.032,-10.032c-1.95,-1.955 -5.118,-1.955 -7.069,-0.002z"
+                fill="#000000"
+                stroke="none"
+                strokeWidth="1"
+                strokeLinecap="butt"
+                strokeLinejoin="miter"
+                opacity="0.15"
+            />
+            <path
+                d="M42.085,15.162l6.224,-0.989"
+                fill="none"
+                stroke="#ffffff"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </g>
+    </g>
+</svg>

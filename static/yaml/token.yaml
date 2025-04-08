@@ -1,0 +1,265 @@
+openapi: 3.0.3
+info:
+  title: TOKEN SERVER
+  version: 1.0.0
+  contact: {}
+servers:
+  - url: http://{{host1}}
+  - url: http://{{host}}
+paths:
+  /token/v1/login:
+    post:
+      tags:
+        - TOKEN
+      summary: LOG IN
+      description: LOG IN
+      operationId: logIn
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                expire_time:
+                  type: number
+                  example: 60480000
+                hold_login:
+                  type: boolean
+                  example: true
+                password:
+                  type: string
+                  example: admin
+                productid:
+                  type: string
+                  example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                user_name:
+                  type: string
+                  example: admin
+            examples:
+              GET TOKEN:
+                value:
+                  expire_time: 60480000
+                  hold_login: true
+                  password: admin
+                  productid: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                  user_name: admin
+              LOG IN:
+                value:
+                  hold_login: true
+                  password: admin
+                  productid: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                  user_name: admin
+      responses:
+        '200':
+          description: ''
+      security:
+        - {}
+  /token/v1/relogin:
+    post:
+      tags:
+        - TOKEN
+      summary: RE LOG IN
+      description: RE LOG IN
+      operationId: reLogIn
+      parameters:
+        - name: accessToken
+          in: query
+          schema:
+            type: string
+            example: >-
+              eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJleHAiOjE2NjkxMTM4ODMuNTA2MjI2LCJpYXQiOjE2NjkxMTMyODMuNTA2MjI2LCJuYmYiOjE2NjkxMTMyODMuNTA2MjI2LCJyb2xlcyI6IntcImI2NGI1NDc4LTEwNDAtNDZlZC1iNDIxLWU4MzU5Njc2MGQzY1wiOlwiYnVpbGRpbmcgbWFuYWdlclwifSIsInNlcnZpY2UiOiJJbmRvb3JOYXZpZ2F0aW9uIiwic3ViIjoiSldUIiwidXNlcl9uYW1lIjoiYWRtaW4ifQ.K68cH4LCtCLJ1XVFZgDYtcyZYdJnYXEx44iBjbDaBhg
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productid:
+                  type: string
+                  example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                token:
+                  type: string
+                  example: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImJ1aWxkaW5naWRcIjpbXCJiNjRiNTQ3OC0xMDQwLTQ2ZWQtYjQyMS1lODM1OTY3NjBkM2NcIixcIjRlYzVkZjA2LTM4MzgtNDIwYy04YTdiLTk1OWE1Y2Y0MjIwNlwiXSxcImlkXCI6XCI3NjQ5MzU4Ni0xZmZkLTRhYTgtOTVkYy0wZWRkZTczNzgwZWFcIixcInByb2R1Y3RpZFwiOlwiMmZlZTJlM2YtZmU4Ny00NDI5LTg1MzEtYjU4YmMyNjYwZjBhXCIsXCJyb2xlaWRcIjpcImY0YWM3OGQ4LWVmMmEtNGNiZi1hMjAwLTM1NWUyZDU1YmFmNFwiLFwicm9sZW5hbWVcIjpcImRldmVsb3BlclwiLFwicm9sZXJhbmtcIjpcIjBBXCIsXCJ1c2VyaWRcIjpcImI3NzQ2N2ViLTFiNzYtNGI0My05MmE2LTU2ODJlNDA3NGE5OVwifV0iLCJleHAiOjE2OTE2MTQ5NTUuNDEzMTA5LCJpYXQiOjE2ODg2MTQ5NTUuNDEzMTA5LCJuYmYiOjE2ODg2MTQ5NTUuNDEzMTA5LCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QiLCJ1c2VyX25hbWUiOiJkZXZlbG9wZXIifQ.bTR6czkzDUEiz2Fe8q5P9aV-wlDqbP6nux5bmAxK2CE
+            examples:
+              RE LOG IN:
+                value:
+                  productid: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                  token: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImJ1aWxkaW5naWRcIjpbXCJiNjRiNTQ3OC0xMDQwLTQ2ZWQtYjQyMS1lODM1OTY3NjBkM2NcIixcIjRlYzVkZjA2LTM4MzgtNDIwYy04YTdiLTk1OWE1Y2Y0MjIwNlwiXSxcImlkXCI6XCI3NjQ5MzU4Ni0xZmZkLTRhYTgtOTVkYy0wZWRkZTczNzgwZWFcIixcInByb2R1Y3RpZFwiOlwiMmZlZTJlM2YtZmU4Ny00NDI5LTg1MzEtYjU4YmMyNjYwZjBhXCIsXCJyb2xlaWRcIjpcImY0YWM3OGQ4LWVmMmEtNGNiZi1hMjAwLTM1NWUyZDU1YmFmNFwiLFwicm9sZW5hbWVcIjpcImRldmVsb3BlclwiLFwicm9sZXJhbmtcIjpcIjBBXCIsXCJ1c2VyaWRcIjpcImI3NzQ2N2ViLTFiNzYtNGI0My05MmE2LTU2ODJlNDA3NGE5OVwifV0iLCJleHAiOjE2OTE2MTQ5NTUuNDEzMTA5LCJpYXQiOjE2ODg2MTQ5NTUuNDEzMTA5LCJuYmYiOjE2ODg2MTQ5NTUuNDEzMTA5LCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QiLCJ1c2VyX25hbWUiOiJkZXZlbG9wZXIifQ.bTR6czkzDUEiz2Fe8q5P9aV-wlDqbP6nux5bmAxK2CE
+      responses:
+        '200':
+          description: ''
+      security:
+        - {}
+  /token/v1/logout:
+    post:
+      tags:
+        - TOKEN
+      summary: LOG OUT
+      description: LOG OUT
+      operationId: logOut
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productid:
+                  type: string
+                  example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                token:
+                  type: string
+                  example: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImlkXCI6XCI3NjQ5MzU4Ni0xZmZkLTRhYTgtOTVkYy0wZWRkZTczNzgwZWFcIixcInByb2R1Y3RpZFwiOlwiMmZlZTJlM2YtZmU4Ny00NDI5LTg1MzEtYjU4YmMyNjYwZjBhXCIsXCJyb2xlaWRcIjpcImY0YWM3OGQ4LWVmMmEtNGNiZi1hMjAwLTM1NWUyZDU1YmFmNFwiLFwicm9sZXJhbmtcIjpcIjBBXCIsXCJ1c2VyaWRcIjpcImI3NzQ2N2ViLTFiNzYtNGI0My05MmE2LTU2ODJlNDA3NGE5OVwifV0iLCJleHAiOjE2ODMxNzE4MzYuMjk4MDM4LCJpYXQiOjE2ODMxNjg4MzYuMjk4MDM4LCJuYmYiOjE2ODMxNjg4MzYuMjk4MDM4LCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QifQ.7GsF9NtcETmHI1UYB_zehSgqWkGFJGV-HA52huJ2I-k
+            examples:
+              LOG OUT:
+                value:
+                  productid: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                  token: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImlkXCI6XCI3NjQ5MzU4Ni0xZmZkLTRhYTgtOTVkYy0wZWRkZTczNzgwZWFcIixcInByb2R1Y3RpZFwiOlwiMmZlZTJlM2YtZmU4Ny00NDI5LTg1MzEtYjU4YmMyNjYwZjBhXCIsXCJyb2xlaWRcIjpcImY0YWM3OGQ4LWVmMmEtNGNiZi1hMjAwLTM1NWUyZDU1YmFmNFwiLFwicm9sZXJhbmtcIjpcIjBBXCIsXCJ1c2VyaWRcIjpcImI3NzQ2N2ViLTFiNzYtNGI0My05MmE2LTU2ODJlNDA3NGE5OVwifV0iLCJleHAiOjE2ODMxNzE4MzYuMjk4MDM4LCJpYXQiOjE2ODMxNjg4MzYuMjk4MDM4LCJuYmYiOjE2ODMxNjg4MzYuMjk4MDM4LCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QifQ.7GsF9NtcETmHI1UYB_zehSgqWkGFJGV-HA52huJ2I-k
+      responses:
+        '200':
+          description: ''
+      security:
+        - {}
+  /token/v1/validate:
+    post:
+      tags:
+        - TOKEN
+      summary: VALIDATE
+      description: VALIDATE
+      operationId: validate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                productid:
+                  type: string
+                  example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                token:
+                  type: string
+                  example: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImJ1aWxkaW5naWRcIjpbXCJiNjRiNTQ3OC0xMDQwLTQ2ZWQtYjQyMS1lODM1OTY3NjBkM2NcIixcIjRlYzVkZjA2LTM4MzgtNDIwYy04YTdiLTk1OWE1Y2Y0MjIwNlwiXSxcImlkXCI6XCI3NjQ5MzU4Ni0xZmZkLTRhYTgtOTVkYy0wZWRkZTczNzgwZWFcIixcInByb2R1Y3RpZFwiOlwiMmZlZTJlM2YtZmU4Ny00NDI5LTg1MzEtYjU4YmMyNjYwZjBhXCIsXCJyb2xlaWRcIjpcImY0YWM3OGQ4LWVmMmEtNGNiZi1hMjAwLTM1NWUyZDU1YmFmNFwiLFwicm9sZW5hbWVcIjpcImRldmVsb3BlclwiLFwicm9sZXJhbmtcIjpcIjBBXCIsXCJ1c2VyaWRcIjpcImI3NzQ2N2ViLTFiNzYtNGI0My05MmE2LTU2ODJlNDA3NGE5OVwifV0iLCJleHAiOjE2ODkwMTcwNjYuMDk2MTk0LCJpYXQiOjE2ODg3MTcwNjYuMDk2MTk0LCJuYmYiOjE2ODg3MTcwNjYuMDk2MTk0LCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QiLCJ1c2VyX25hbWUiOiJkZXZlbG9wZXIifQ.oWqF7blaP26nQ9zKooYbdNwA8RwlQE6Uuq9GYSrVSko
+            examples:
+              VALIDATE:
+                value:
+                  productid: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+                  token: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdXRob3JpemF0aW9uIjoiW3tcImJ1aWxkaW5naWRcIjpbXCJiNjRiNTQ3OC0xMDQwLTQ2ZWQtYjQyMS1lODM1OTY3NjBkM2NcIixcIjRlYzVkZjA2LTM4MzgtNDIwYy04YTdiLTk1OWE1Y2Y0MjIwNlwiXSxcImlkXCI6XCI3NjQ5MzU4Ni0xZmZkLTRhYTgtOTVkYy0wZWRkZTczNzgwZWFcIixcInByb2R1Y3RpZFwiOlwiMmZlZTJlM2YtZmU4Ny00NDI5LTg1MzEtYjU4YmMyNjYwZjBhXCIsXCJyb2xlaWRcIjpcImY0YWM3OGQ4LWVmMmEtNGNiZi1hMjAwLTM1NWUyZDU1YmFmNFwiLFwicm9sZW5hbWVcIjpcImRldmVsb3BlclwiLFwicm9sZXJhbmtcIjpcIjBBXCIsXCJ1c2VyaWRcIjpcImI3NzQ2N2ViLTFiNzYtNGI0My05MmE2LTU2ODJlNDA3NGE5OVwifV0iLCJleHAiOjE2ODkwMTcwNjYuMDk2MTk0LCJpYXQiOjE2ODg3MTcwNjYuMDk2MTk0LCJuYmYiOjE2ODg3MTcwNjYuMDk2MTk0LCJwcm9kdWN0aWQiOiIyZmVlMmUzZi1mZTg3LTQ0MjktODUzMS1iNThiYzI2NjBmMGEiLCJzdWIiOiJKV1QiLCJ1c2VyX25hbWUiOiJkZXZlbG9wZXIifQ.oWqF7blaP26nQ9zKooYbdNwA8RwlQE6Uuq9GYSrVSko
+      responses:
+        '200':
+          description: ''
+      security:
+        - {}
+  /token/v1/clear:
+    delete:
+      tags:
+        - TOKEN
+      summary: CLEAR TOKEN CACHE
+      description: CLEAR TOKEN CACHE
+      operationId: clearTokenCache
+      parameters:
+        - name: productid
+          in: query
+          schema:
+            type: string
+            example: 2fee2e3f-fe87-4429-8531-b58bc2660f0a
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                service:
+                  type: string
+                  example: IndoorNavigation
+                token:
+                  type: string
+                  example: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJleHAiOjE2NjkxNzgwMDQuNDA5NzM4LCJpYXQiOjE2NjkxNzc5ODQuNDA5NzM4LCJuYmYiOjE2NjkxNzc5ODQuNDA5NzM4LCJyb2xlcyI6IntcImI2NGI1NDc4LTEwNDAtNDZlZC1iNDIxLWU4MzU5Njc2MGQzY1wiOlwiYnVpbGRpbmcgbWFuYWdlclwifSIsInNlcnZpY2UiOiJJbmRvb3JOYXZpZ2F0aW9uIiwic3ViIjoiSldUIiwidXNlcl9uYW1lIjoiYWRtaW4ifQ.yZ46apn0Ea2xXggOm2NS-nTiFuiTvWUqCZRwf_E5wkY
+            examples:
+              CLEAR TOKEN CACHE:
+                value:
+                  service: IndoorNavigation
+                  token: >-
+                    eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJleHAiOjE2NjkxNzgwMDQuNDA5NzM4LCJpYXQiOjE2NjkxNzc5ODQuNDA5NzM4LCJuYmYiOjE2NjkxNzc5ODQuNDA5NzM4LCJyb2xlcyI6IntcImI2NGI1NDc4LTEwNDAtNDZlZC1iNDIxLWU4MzU5Njc2MGQzY1wiOlwiYnVpbGRpbmcgbWFuYWdlclwifSIsInNlcnZpY2UiOiJJbmRvb3JOYXZpZ2F0aW9uIiwic3ViIjoiSldUIiwidXNlcl9uYW1lIjoiYWRtaW4ifQ.yZ46apn0Ea2xXggOm2NS-nTiFuiTvWUqCZRwf_E5wkY
+      responses:
+        '200':
+          description: ''
+      security:
+        - {}
+  /token/v1/product:
+    get:
+      tags:
+        - PRODUCT
+      summary: PRODUCT
+      description: PRODUCT
+      operationId: product
+      parameters:
+        - name: service
+          in: query
+          schema:
+            type: string
+            example: WorkFlowService
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    post:
+      tags:
+        - PRODUCT
+      summary: CREAT PRODUCT
+      description: CREAT PRODUCT
+      operationId: creatProduct
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                config:
+                  type: object
+                  properties: {}
+                service:
+                  type: string
+                  example: NetworkService
+            examples:
+              CREAT PRODUCT:
+                value:
+                  config: {}
+                  service: NetworkService
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+    delete:
+      tags:
+        - PRODUCT
+      summary: PRODUCT
+      description: PRODUCT
+      operationId: product1
+      parameters:
+        - name: service
+          in: query
+          schema:
+            type: string
+            example: IndoorNavigation2
+      responses:
+        '200':
+          description: ''
+      security:
+        - apiKey: []
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      name: token
+      in: header
+tags:
+  - name: TOKEN
+  - name: PRODUCT

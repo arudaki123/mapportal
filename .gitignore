@@ -18,3 +18,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.vscode
+src/data/docsTree.json
+src/data/docsTree.json
+.env
+tina/__generated__
