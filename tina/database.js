@@ -6,6 +6,7 @@ import { Gitlab } from "@gitbeaker/node";
 import { Base64 } from "js-base64";
 import path from "path";
 import fs from "fs";
+import { GitHubProvider } from "tinacms-gitprovider-github";
 
 // `isLocal` determines if the database is running in "Local Mode" or "Production Mode". You can set this value in your .env file or use a different method for determining the value. In this example we are using an environment variable.
 
@@ -16,14 +17,23 @@ const isLocal = process.env.TINA_PUBLIC_IS_LOCAL === 'true'
 if (isLocal) console.log('Running TinaCMS in local mode.')
 else console.log('Running TinaCMS in production mode.')
 
-const host = process.env.GITLAB_HOST
-const projectId = process.env.GITLAB_PROJECT_ID
-const token = process.env.GITLAB_PERSONAL_ACCESS_TOKEN
-const branch = process.env.GITLAB_BRANCH
+// const host = process.env.GITLAB_HOST
+// const projectId = process.env.GITLAB_PROJECT_ID
+// const token = process.env.GITLAB_PERSONAL_ACCESS_TOKEN
+// const branch = process.env.GITLAB_BRANCH
+
+const token = process.env.GITHUB_PERSONAL_ACCESS_TOKEN as string;
+const owner = (process.env.GITHUB_OWNER ||
+  process.env.VERCEL_GIT_REPO_OWNER) as string;
+const repo = (process.env.GITHUB_REPO ||
+  process.env.VERCEL_GIT_REPO_SLUG) as string;
+const branch = (process.env.GITHUB_BRANCH ||
+  process.env.VERCEL_GIT_COMMIT_REF ||
+  "main") as string;
 
 const gitbeaker = new Gitlab({
   token: token,
-  host: host
+  // host: host
 });
 
 const localLevelStore = new TinaLevelClient()
@@ -58,6 +68,26 @@ const gitlabOnPut = async (key, value) => {
   )
 
 }
+
+const githubOnPut =   createDatabase({
+    gitProvider: new GitHubProvider({
+      branch,
+      owner,
+      repo,
+      token,
+    }),
+    databaseAdapter: new RedisLevel<string, Record<string, any>>({
+      redis: {
+        url:
+          (process.env.KV_REST_API_URL as string) || "http://localhost:8079",
+        token: (process.env.KV_REST_API_TOKEN as string) || "example_token",
+      },
+      debug: process.env.DEBUG === "true" || false,
+    }),
+    namespace: branch,
+  });
+
+
 const localOnPut = async (key, value) => {
   const currentPath = path.join(process.cwd(), key);
   fs.writeFileSync(currentPath, value);
